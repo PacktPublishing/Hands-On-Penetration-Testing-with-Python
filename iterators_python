@@ -1,0 +1,102 @@
+ 345
+down vote
+accepted
+
+Iteration is a general term for taking each item of something, one after another. Any time you use a loop, explicit or implicit, to go over a group of items, that is iteration.
+
+In Python, iterable and iterator have specific meanings.
+
+An iterable is an object that has an __iter__ method which returns an iterator, or which defines a __getitem__ method that can take sequential indexes starting from zero (and raises an IndexError when the indexes are no longer valid). So an iterable is an object that you can get an iterator from.
+
+An iterator is an object with a next (Python 2) or __next__ (Python 3) method.
+
+Whenever you use a for loop, or map, or a list comprehension, etc. in Python, the next method is called automatically to get each item from the iterator, thus going through the process of iteration.
+
+This for loop is automatically doing what we were doing manually: calling iter to get an iterator and then calling next over and over until a StopIteration exception is raised
+
+A good place to start learning would be the iterators section of the tutorial and the iterator types section of the standard types page. After you understand the basics, try the iterators section of the Functional Programming HOWTO.
+
+
+
+
+>>> string="hello world"
+>>> a=iter(a):
+  File "<stdin>", line 1
+    a=iter(a):
+             ^
+SyntaxError: invalid syntax
+>>> a=iter(string)
+>>> a
+<str_iterator object at 0x7fb0902e2b70>
+>>> for aa in a:
+...     print (aa)
+... 
+h
+e
+l
+l
+o
+ 
+w
+o
+r
+l
+d
+>>> a
+<str_iterator object at 0x7fb0902e2b70>
+>>> a.get_item(0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str_iterator' object has no attribute 'get_item'
+>>> dir(a)
+['__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__length_hint__', '__lt__', '__ne__', '__new__', '__next__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setstate__', '__sizeof__', '__str__', '__subclasshook__']
+>>> a.__getitem__()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str_iterator' object has no attribute '__getitem__'
+>>> 
+>>> a.__getitem__(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str_iterator' object has no attribute '__getitem__'
+>>> 
+>>> a.__getattribute__(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: attribute name must be string, not 'int'
+>>> a.__getattribute__("a")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str_iterator' object has no attribute 'a'
+>>> a.__getattribute__()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: expected 1 arguments, got 0
+>>> a.get()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str_iterator' object has no attribute 'get'
+>>> a.next()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str_iterator' object has no attribute 'next'
+>>> next(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> 
+>>> 
+>>> 
+>>> next(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> a
+<str_iterator object at 0x7fb0902e2b70>
+>>> a=iter(string)
+>>> next(a)
+'h'
+>>> next(a)
+'e'
+>>> 
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<employees department="IT"  location="Dubai">
+    <employee id="1">
+        <name>Emp1</name>
+	<age>32</age>
+	<salary>30000</salary>
+	<doj>06/06/2016</doj>
+	<manager_id>33</manager_id>
+    </employee>
+    <employee id="2">
+        <name>Emp2</name>
+	<age>28</age>
+	<salary>27000</salary>
+	<doj>18/02/2017</doj>
+	<manager_id>33</manager_id>
+    </employee>
+</employees>
+
