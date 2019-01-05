@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% block title %} Resume / Modify {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                                      
+				   <h1 class="page-header">Resume / Modify Scan</h1>
+                    {% if error %}
+                    <div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span class="glyphicon glyphicon-floppy-remove"></span><strong> Error!</strong> No project found!</div>
+                    {% elif details %}
+					 <div class="alert alert-success">
+                       
+                        <span class="glyphicon glyphicon-floppy-saved"></span> <strong> Please note!</strong>  <h5> The tool provides a provision to pause scans and modify already completed scans <br>A user can resume an earlier paused scan here and at the same time a user can also modify an already completed scan.The project name would remain fixed as earlier and rest of the details can be updated ...</h5>
+                    </div> 
+                    <form class="form-horizontal" role="form" method="POST" action="/modify">
+                        
+                        <!-- Set project name -->
+                        <div class="form-group">
+                            <label for="projectName" class="col-sm-2 control-label">Project Name</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="projectName" id="projectName" value="{{ project.project_name }}" disabled>
+                                <input type="hidden" name="projectName" value="{{ project.project_name }}">
+                            </div>
+                        </div>
+                        
+                        <!-- Set Start URL -->
+                        <div class="form-group">
+                            <label for="startURL" class="col-sm-2 control-label">Seed URLs</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="startURL" id="startURL" value="{{ project.start_url }}" placeholder="http://example.com">
+                            </div>
+                        </div>
+
+
+                        
+                        <!-- Set Query URL -->
+                        <!--<div class="form-group">
+                            <label for="queryURL" class="col-sm-2 control-label">Query URL</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="queryURL" id="queryURL" value="{{ project.query_url }}" placeholder="http://example.com/query">
+                            </div>
+                        </div>-->
+                        
+                        <!-- CSRF - Yoyo! -->
+                        {% csrf_token %}
+                                
+                        <!-- Set Allowed Protocols -->
+                        <div class="form-group">
+                            <label for="allowedProtocols" class="col-sm-2 control-label">Allowed Protocols</label>
+                            <div class="col-sm-5">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="allowedProtocols[]" id="allowedProtocols" value="http" {% if 'http' in details.allowed_protocols %}checked="checked"{% endif %}> HTTP
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="allowedProtocols[]" id="allowedProtocols" value="https" {% if 'https' in details.allowed_protocols %}checked="checked"{% endif %}> HTTPS
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Set Allowed Extensions -->
+                        <div class="form-group">
+                            <label for="allowedExtensions" class="col-sm-2 control-label">Allowed Extensions</label>
+                            <div class="col-sm-5">
+                                <textarea id="allowedExtensions" name="allowedExtensions" class="form-control" rows="3" spellcheck="false">{{ details.allowed_extensions }}</textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Consider only these input types -->
+                        <div class="form-group">
+                            <label for="toConsider" class="col-sm-2 control-label">Consider Only</label>
+                            <div class="col-sm-5">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="textareas" {% if 'textareas' in details.consider_only %}checked="checked"{% endif %}> Textareas
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="checkboxes" {% if 'checkboxes' in details.consider_only %}checked="checked"{% endif %}> Checkboxes and Radios
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="selects" {% if 'selects' in details.consider_only %}checked="checked"{% endif %}> Selects
+                                </label>
+                                
+                                <!-- its looking awkward!. So, new line! -->
+                                <br>
+                                
+                                <!--<label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="cookies" {% if 'cookies' in details.consider_only %}checked="checked"{% endif %}> Cookies
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="sessions" {% if 'sessions' in details.consider_only %}checked="checked"{% endif %}> Session Variables
+                                </label>-->
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="inputs" {% if 'inputs' in details.consider_only %}checked="checked"{% endif %}> Input Tags
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Exclude input types with names and ids as this -->
+                        <div class="form-group">
+                            <label for="toExclude" class="col-sm-2 control-label">Exclude these fields</label>
+                            <div class="col-sm-5">
+                                <textarea id="toExclude" name="toExclude" class="form-control" rows="2" spellcheck="false">{{ details.exclude }}</textarea>
+                            </div>
+                        </div>
+						
+						<!-- Include Auth Information -->
+                            <label for="toExclude"><font color="">Authentication Information</font></label><br><br>
+                            <div class="form-group">
+                                <label for="loginURL" class="col-sm-2 control-label">Login URL</label>
+                                <div class="col-sm-5">
+                                        <input type="text" name="loginURL" id="loginURL" placeholder="http://example.com/login" value="{{ project.login_url }}" class="form-control" onclick="close_all();"></input>
+		                </div>
+                                <br><br>
+                                <label for="logoutURL" class="col-sm-2 control-label">Logout URL</label>
+				<div class="col-sm-5">
+                                        <input type="text" name="logoutURL" id="logoutURL" placeholder="http://example.com/logout" value="{{ project.logout_url }}"  class="form-control" onclick="close_all();"></input>
+				</div>
+                                <br><br>
+			    </div>
+                            <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Field name for Username</label>
+				<div class="col-sm-5">
+                                        <input id="toAuthUsernameField" name="toAuthUsernameField" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Text_box_user" value="{{ project.username_field }}" ></input>                        
+                                </div>
+			    </div>
+			    <div class="form-group">
+				<label for="toExclude" class="col-sm-2 control-label">Username</label>
+				<div class="col-sm-5">
+                                        <input id="toAuthUsername" name="toAuthUsername" class="form-control" width="20" rows="1" spellcheck="false" value="{{ project.username }}"  onclick="close_all();"></input>                        
+                                </div>
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Field name for Password</label>
+                                <div class="col-sm-5">
+					<input id="toAuthPasswordField" name="toAuthPasswordField" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Text_box_password" value="{{ project.password_field }}" ></input>
+                                </div>								
+			    </div>
+							  
+			    <div class="form-group">	
+				<label for="toExclude" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-5">
+				        <input id="toAuthPassword" name="toAuthPassword" class="form-control" width="20" rows="1" spellcheck="false" value="{{ project.password }}"  onclick="close_all();"></input>
+                                </div>
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Additional Parameters</label>
+                                <div class="col-sm-5">
+				        <input id="authParameters" name="authParameters" class="form-control" width="20" rows="1" spellcheck="false" placeholder="field1:value1,field2:value2" value="{{ project.auth_parameters}}" ></input>
+                                </div>	
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Auth Mode (CSRF token)</label>
+                                <div class="col-sm-5">
+				        <input id="toAuthMode" name="toAuthMode" class="form-control" width="20" rows="1" spellcheck="false" value="{{ project.auth_mode }}"  onclick="close_all();"></input>
+                                </div>
+			    </div> 						
+                        
+                        <!-- Checkbox to force re run -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="force" value="force"> Re-run the scan! All the previous data is lost!
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Checkbox to remember the settings -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" value="remember"> Remember these settings
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- A neat blue button! -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-play-circle"></span> Start Scanning</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                    {% else %}
+                    {% if projects %}
+                    <form class="form-horizontal" role="form" method="GET" action="">
+                        
+                        <!-- Set project name -->
+                        <div class="form-group">
+                            <label for="projectName" class="col-sm-2 control-label">Project Name</label>
+                            <div class="col-sm-5">
+                                <select class="form-control" name="projectName" id="projectName">
+                                {% for project in projects %}
+                                    <option value="{{ project }}">{{ project }}</option>                    
+                                {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- A neat blue button! -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-play-circle"></span> Proceed</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                    {% else %}
+                    <p>No completed projects yet!</p>
+                    {% endif %}
+                    {% endif %}
+
+{% endblock %}

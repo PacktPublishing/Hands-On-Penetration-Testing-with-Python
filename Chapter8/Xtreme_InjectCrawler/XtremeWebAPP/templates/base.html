@@ -1,0 +1,587 @@
+<html>
+    <head>
+        <!-- Meta Links -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Inject Crawler">
+        <meta name="author" content="khan">
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/static/favicon.ico">
+        
+        <!-- Title -->
+        <title> Inject Crawler |{% block title %}{% endblock %}</title>
+        
+        <!-- Open Sans all the way! -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        
+        <!-- Bootstrap CSS -->
+        <link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet">
+        
+        <!-- CSS links for just this page, if any! -->
+        {% block css_links %}{% endblock %}
+        
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+		<script type="text/javascript" src="/static/js/jszip.js"></script>
+		<script type="text/javascript">
+		
+		function show_fl()
+		{
+		//alert("h1");
+		document.getElementById("float").style.display="block";
+		}
+		function open_parllel()
+		{
+		
+		if(document.getElementById("parllel").checked)
+		document.getElementById("parllel_box").style.display="Block";
+		else
+		document.getElementById("parllel_box").style.display="none";
+		
+		}
+		function check()
+		{
+			if((document.getElementById("projectName").value.trim()=="") || (document.getElementById("startURL").value.trim()=="") ||  (document.getElementById("loginURL").value.trim()=="") || (document.getElementById("logoutURL").value.trim()=="") || (document.getElementById("toAuthUsernameField").value.trim()=="") || (document.getElementById("toAuthUsername").value.trim()=="") || (document.getElementById("toAuthPasswordField").value.trim()=="") ||(document.getElementById("toAuthPassword").value.trim()==""))
+			{
+				alert("Fill all the required fields");
+        			return false;
+			}
+			if((document.getElementById("projectName").value.length>30))
+			{
+				alert("Project name can't exceed 30 characters");
+				return false;
+			}
+			if(document.getElementById("parllel").checked)
+			{
+			if((document.getElementById("queueName").value.trim()==""))
+			{
+			alert("Cant leave the filed blank if multiple scan option is selected");
+			return false;
+			}
+			}
+		}
+		
+	    function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+		function create_zip() 
+		{
+		//alert("zip");
+		 var xmlhttp;
+		 var csrfmiddlewaretoken="Q8fZUKGdyX7zMOkiJfisR2ae26xcWaYs"
+		 var test=122;
+		 //var csrftoken=getCookie('csrftoken');
+		 //alert(csrftoken);
+      
+	  //var content="hello test";
+	   //alert("content is "+document.documentElement.outerHTML);
+    if(window.XMLHttpRequest)
+    {
+    xmlhttp =new XMLHttpRequest();
+    }
+    else
+    {
+     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+	if((xmlhttp.readyState==1 || xmlhttp.readyState==3))
+        {
+        //load_me.style.display="block";
+		//alert("aaa");
+        document.getElementById("center_loading").style.display="block";
+       
+        }
+    
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+		{
+         
+		 
+		 //alert("response is/css content before formating "+xmlhttp.responseText);
+            //alert("a");
+			document.getElementById("center_loading").style.display ="none";
+			var css=xmlhttp.responseText;
+			var zip = new JSZip();
+	       text=document.documentElement.outerHTML;
+		   var ind=text.indexOf("<!--");
+		   //alert(ind);
+		   
+		   var text1=text.substring(0,ind);
+		   //alert(text1);
+		  var text1=text1+'<link type="text/css" href="style.css" rel="stylesheet">';
+		  //alert(text1);
+		  var text2=text.substring(ind);
+		  text3=text1+text2;
+		  css=css.replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&#x2F;/g, "/");
+		  //alert("css after updation  "+css);
+		  //var str = "Mr Blue has a blue house and a blue car blue blue blue ";
+          //var res = str.replace(/blue/gi, "red");
+		 // alert(res);
+	        
+	         zip.add("index.html", text3);
+			 zip.add("style.css",css);
+	         content = zip.generate();
+	         location.href="data:application/zip;base64," + content;
+			 
+           
+            
+        }
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 0) 
+		{
+		document.getElementById("center_loading").style.display ="none";
+         }
+    }
+   
+    
+
+   
+	xmlhttp.open("GET", "/script?method_id='2'&content='text'&proj_name={{ project.project_name }}&update=1", true);
+	
+    xmlhttp.send();
+	
+	
+
+}
+		function get_details(a)
+		{
+		//alert(a);
+		//alert(b);
+		//alert(document.getElementById("show_details_parent"+a).innerHTML);
+		document.getElementById("content_display").style.display="block";
+		document.getElementById("content_display").innerHTML=document.getElementById("show_details_parent"+a).innerHTML;
+		//alert(document.documentElement.outerHTML);
+		//document.getElementById("show_details_parent"+a).style.display="block";
+		
+		}
+		function close_content(a)
+		{
+		//alert(a);
+		document.getElementById("content_display").style.display="none";
+		}
+		function close_alll()
+		{
+		//alert("1");
+		document.getElementById("floating_start").style.display="none";
+		document.getElementById("floating_username").style.display="none";
+		document.getElementById("floating_password").style.display="none";
+		document.getElementById("floating_add").style.display="none";
+		document.getElementById("floating_queue").style.display="none";
+		document.getElementById("floating_login").style.display="none";
+		document.getElementById("floating_logout").style.display="none";
+		document.getElementById("floating_csrf").style.display="none";
+		}
+		function close_otherr(id)
+		{
+		//alert("1");
+		if(id=="username")
+		{
+		document.getElementById("floating_start").style.display="none";
+		document.getElementById("floating_password").style.display="none";
+		}
+		if(id=="password")
+		{
+		document.getElementById("floating_start").style.display="none";
+		document.getElementById("floating_username").style.display="none";
+		}
+		}
+		</script>
+		 <script type ="text/javascript" src="/static/js/jhquery 1.9.1.js"></script>
+		 
+		<script type ="text/javascript">
+		$(document).ready(function(){
+		
+		 $("#step01").click(function(e){
+		 e.preventDefault();
+		 $("#step1").slideToggle();
+		 $("#step3").hide();
+		 $("#step2").hide();
+		 $("#step4").hide();
+		 $("#step5").hide();
+		 $("#step6").hide();
+		 $("#step7").hide();
+		 $("#step8").hide();
+		 $("#step9").hide();
+		 
+		 
+		 });
+		  $("#step02").click(function(e){
+		 e.preventDefault();
+		 $("#step2").slideToggle();
+		 $("#step1").hide();
+		 $("#step3").hide();
+		 $("#step4").hide();
+		 $("#step5").hide();
+		 $("#step6").hide();
+		 $("#step7").hide();
+		 $("#step8").hide();
+		 $("#step9").hide();
+		 
+		 
+		 });
+		  
+		 $("#step03").click(function(e){
+		 e.preventDefault();
+		 $("#step3").slideToggle();
+		 $("#step1").hide();
+		 $("#step2").hide();
+		 $("#step4").hide();
+		 $("#step5").hide();
+		 $("#step6").hide();
+		 $("#step7").hide();
+		 $("#step8").hide();
+		 $("#step9").hide();
+		 
+		 
+		 });
+		  $("#step04").click(function(e){
+		  e.preventDefault();
+		 $("#step4").slideToggle();
+		 $("#step1").hide();
+		 $("#step2").hide();
+		 $("#step3").hide();
+		 $("#step5").hide();
+		 $("#step6").hide();
+		 $("#step7").hide();
+		 $("#step8").hide();
+		 $("#step9").hide();
+		 
+		 
+		 });
+		 $("#step05").click(function(e){
+		  e.preventDefault();
+		 $("#step5").slideToggle();
+		 $("#step1").hide();
+		 $("#step2").hide();
+		 $("#step3").hide();
+		 $("#step4").hide();
+		 $("#step6").hide();
+		 $("#step7").hide();
+		 $("#step8").hide();
+		 $("#step9").hide();
+		 
+		 
+		 });
+		  $("#step06").click(function(e){
+		  e.preventDefault();
+		 $("#step6").slideToggle();
+		 $("#step1").hide();
+		 $("#step2").hide();
+		 $("#step3").hide();
+		 $("#step4").hide();
+		 $("#step5").hide();
+		 $("#step7").hide();
+		 $("#step8").hide();
+		 $("#step9").hide();
+		 
+		 
+		 });
+		 $("#step07").click(function(e){
+		  e.preventDefault();
+		 $("#step7").slideToggle();
+		 $("#step1").hide();
+		 $("#step2").hide();
+		 $("#step3").hide();
+		 $("#step4").hide();
+		 $("#step5").hide();
+		 $("#step6").hide();
+		 $("#step8").hide();
+		 $("#step9").hide();
+		 
+		 
+		 });
+		 
+		 $("#step08").click(function(e){
+		  e.preventDefault();
+		 $("#step8").slideToggle();
+		 $("#step1").hide();
+		 $("#step2").hide();
+		 $("#step3").hide();
+		 $("#step4").hide();
+		 $("#step5").hide();
+		 $("#step6").hide();
+		 $("#step7").hide();
+		 $("#step9").hide();
+		 
+		 
+		 });
+		 $("#step09").click(function(e){
+		  e.preventDefault();
+		 $("#step9").slideToggle();
+		 $("#step1").hide();
+		 $("#step2").hide();
+		 $("#step3").hide();
+		 $("#step4").hide();
+		 $("#step5").hide();
+		 $("#step6").hide();
+		 $("#step7").hide();
+		 $("#step8").hide();
+		 
+		 
+		 });
+		
+		 $("#load").click(function(){
+		 $("#blind_content").hide();
+		 $("#logic_content").hide();
+		 $("#new_content").slideToggle(2000);
+		 });
+		 $("#load_app_logic").click(function(){
+		 $("#blind_content").hide();
+		 $("#new_content").hide();
+		 $("#logic_content").slideToggle(2000);
+		 });
+		 $("#load_blind").click(function(){
+		 $("#new_content").hide();
+		 $("#logic_content").hide();
+		 $("#blind_content").slideToggle(2000);
+		 });
+		 
+		 
+		 $("#reports_slider").click(function(){
+		 $("#float_reports").slideToggle();
+		 $("#float").hide();
+		 $("#float_overview").hide();
+		 });
+		 $("#scan_slider").click(function(){
+		 $("#float").slideToggle();
+		 $("#float_overview").hide();
+		 $("#float_reports").hide();
+		 });
+		  $("#overview_slider").click(function(){
+		 $("#float_overview").slideToggle();
+		 });
+		 
+		 $("#toAuthUsernameField").click(function(){
+         $("#floating_username").slideToggle();
+		 $("#floating_password").hide();
+		 $("#floating_start").hide();
+		  $("#floating_login").hide();
+		   $("#floating_logout").hide();
+		    $("#floating_add").hide();
+			 $("#floating_csrf").hide();
+			 $("#floating_queue").hide();
+          });
+		 $("#startURL").click(function(){
+         $("#floating_start").slideToggle();
+		 $("#floating_username").hide();
+		 $("#floating_password").hide();
+		  $("#floating_login").hide();
+		   $("#floating_logout").hide();
+		    $("#floating_add").hide();
+			 $("#floating_csrf").hide();
+			 $("#floating_queue").hide();
+		 //alert("hello" + $("#this").name);
+		 
+          });
+		  
+		 $("#toAuthPasswordField").click(function(){
+         $("#floating_password").slideToggle();
+		 $("#floating_start").hide();
+		 $("#floating_username").hide();
+		  $("#floating_login").hide();
+		   $("#floating_logout").hide();
+		    $("#floating_add").hide();
+			 $("#floating_csrf").hide();
+			  $("#floating_queue").hide();
+			   
+          });
+		  $("#queueName").click(function(){
+		  $("#floating_queue").slideToggle();
+		 $("#floating_start").hide();
+		 $("#floating_username").hide();
+		  $("#floating_login").hide();
+		   $("#floating_logout").hide();
+		    $("#floating_add").hide();
+			 $("#floating_csrf").hide();
+			 $("#floating_password").hide();
+		  });
+		  
+		   $("#loginURL").click(function(){
+		  $("#floating_login").slideToggle();
+		 $("#floating_start").hide();
+		 $("#floating_username").hide();
+		  $("#floating_queue").hide();
+		   $("#floating_logout").hide();
+		    $("#floating_add").hide();
+			 $("#floating_csrf").hide();
+			 $("#floating_password").hide();
+		  });
+		  
+		   $("#logoutURL").click(function(){
+		  $("#floating_logout").slideToggle();
+		 $("#floating_start").hide();
+		 $("#floating_username").hide();
+		  $("#floating_login").hide();
+		   $("#floating_queue").hide();
+		    $("#floating_add").hide();
+			 $("#floating_csrf").hide();
+			 $("#floating_password").hide();
+		  });
+		   $("#authParameters").click(function(){
+		  $("#floating_add").slideToggle();
+		 $("#floating_start").hide();
+		 $("#floating_username").hide();
+		  $("#floating_login").hide();
+		   $("#floating_queue").hide();
+		    $("#floating_logout").hide();
+			 $("#floating_csrf").hide();
+			 $("#floating_password").hide();
+		  });
+		    $("#toAuthMode").click(function(){
+		  $("#floating_csrf").slideToggle();
+		 $("#floating_start").hide();
+		 $("#floating_username").hide();
+		  $("#floating_login").hide();
+		   $("#floating_queue").hide();
+		    $("#floating_logout").hide();
+			 $("#floating_add").hide();
+			 $("#floating_password").hide();
+		  });
+		  
+		  $("#publicIP").click(function(){
+		
+		  $("#floating_method").hide();
+		  $("#floating_url").hide();
+		  $("#floating_parameter").hide();
+		  $("#floating_parameter_value").hide();
+		  $("#floating_match_string").hide();
+		    $("#floating_ip").slideToggle();
+		  
+		  });
+		   $("#method").click(function(){
+		 
+		  $("#floating_ip").hide();
+		  $("#floating_url").hide();
+		  $("#floating_parameter").hide();
+		  $("#floating_parameter_value").hide();
+		  $("#floating_match_string").hide();
+		   $("#floating_method").slideToggle();
+		  
+		  });
+		  
+		  $("#blindURL").click(function(){
+		  $("#floating_ip").hide();
+		  $("#floating_method").hide();
+		  $("#floating_url").slideToggle();
+		  $("#floating_parameter").hide();
+		  $("#floating_parameter_value").hide();
+		  $("#floating_match_string").hide();
+		  
+		  });
+		  $("#paramName").click(function(){
+		  $("#floating_ip").hide();
+		  $("#floating_method").hide();
+		  $("#floating_url").hide();
+		  $("#floating_parameter").slideToggle();
+		  $("#floating_parameter_value").hide();
+		  $("#floating_match_string").hide();
+		  
+		  });
+		  
+		  $("#paramValue").click(function(){
+		  $("#floating_ip").hide();
+		  $("#floating_method").hide();
+		  $("#floating_url").hide();
+		  $("#floating_parameter").hide();
+		  $("#floating_parameter_value").slideToggle();
+		  $("#floating_match_string").hide();
+		  
+		  });
+		  
+		  $("#matchString").click(function(){
+		  $("#floating_ip").hide();
+		  $("#floating_method").hide();
+		  $("#floating_url").hide();
+		  $("#floating_parameter").hide();
+		  $("#floating_parameter_value").hide();
+		  $("#floating_match_string").slideToggle();
+		  
+		  });
+});
+		</script>
+    </head>
+    
+    <body>
+        
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/" style="color:#ffffff"><span class="glyphicon glyphicon-flash"></span>Inject Crawler</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    
+                     
+                    <ul class="nav nav-sidebar">
+                        <li><a href="#" id="scan_slider" style="text-decoration:none" ><span class="glyphicon glyphicon-plus"></span>&nbsp;CRAWL</a>
+						<div id="float" style="display:none">
+						<table style="position:relative;left:15%">
+						<tr>
+						<td>
+						<ul class="nav nav-sidebar1">
+						<li {%if page and page == 'new_scan'%} class="active"{% endif %}><a href="/scans" style="text-decoration:none;font-size:14px;"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New Project</a></li>
+						</td>
+						</tr>
+						</table>
+						</div>
+						</li>
+						</ul>
+						</td>
+						</tr>
+						</table>
+						</div>
+						</li>
+                    </ul>
+					
+					</td>
+					</tr>
+					</table>
+					</div>
+					</ul>
+
+                   
+
+                </div>
+				</div>
+				</div>
+                
+                {% block body_content %}{% endblock %}
+        
+        <!-- Bootstrap core JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/docs.min.js"></script>
+                
+        {% block scripts %}{% endblock %}
+		{% block scripts_blind %}{% endblock %}
+    
+    </body>
+</html>

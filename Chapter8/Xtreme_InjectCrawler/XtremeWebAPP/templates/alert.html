@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} {% if error %}That is an error!{% else %}Success{% endif %} {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                    <!-- Heading! -->
+                    <h1 class="page-header">{% if error %}Error!{% else %}Success!{% endif %}</h1>
+
+                    <div class="alert alert-{% if error %}danger{% else %}success{% endif %}">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>{% if error %}Error!{% else %}Success!{% endif %}</strong> {{ text }}
+                    </div>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

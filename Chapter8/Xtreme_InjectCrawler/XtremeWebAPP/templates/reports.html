@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+
+{% block title %} Reports {% if option_given %}- {{ project.project_name }}{% endif %} {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                  
+                    {% if option_given %}
+					<div class="alert alert-success">
+                       
+                        <span class="glyphicon glyphicon-floppy-saved"></span> <strong> Please note!</strong>  <h5> In the Scan log click upon the number under # vulnerabilities found tab to see the details .</h5>
+						In order to download the report click at the download report button at right hand side of page ...
+                    </div>
+                    <h1 class="page-header">Report - {{project.project_name}}</h1>
+					
+					<button onclick="create_zip()"  class="btn btn-primary" style="position:absolute;left:86%;top:6%">Download Report</button>
+                    {% else %}
+                    <h1 class="page-header">Reports</h1>
+                    {% endif %}
+                    {% if option_given %}
+                    {% if error %}
+                    <div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span class="glyphicon glyphicon-floppy-remove"></span><strong> Error!</strong> No project found!</div>
+                    {% else %}
+					<div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Project Configuration
+                            </h3>
+                        </div>
+                      
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Project Name</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">{{ project.project_name }}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Seed URLs</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">{{ project.start_url }}</p>
+                                    </div>
+                                </div>
+                                
+                                <!--<div class="form-group">
+                                    <label class="col-sm-2 control-label">Query URL</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">{{ project.query_url }}</p>
+                                    </div>
+                                </div>
+                                -->
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Allowed Protocols</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">{{ settings.allowed_protocols }}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Allowed Extensions</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">{{ settings.allowed_extensions }}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Consider Only</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">{{ settings.consider_only }}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Exclude Fields</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">{{ settings.exclude }}</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+					
+                    <div id="parent_report" class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Scan Log</h3>
+							 
+                        </div>
+                        
+                        <div class="panel-body">
+						<div id="content_display" style="position:absolute;left:58%;width:38%;max-height:600px;overflow:auto;border-width:1px;border-style:solidd;border-color:gray;"></div>
+                           <table class="table" style="font-size:100%;position:relative;width:50%">
+                         <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-2">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <b>Category</b>
+                                        </th>
+                                        <th>
+                                            <b># Vulnerabilities found</b>
+                                        </th>
+                                        
+                                    </tr>
+                                </thead>
+						 {% for c in counters %}
+						 
+						  <tr><td style="font-size: .85em;font-weight:bold;">{{c.vul_type}}</td><td align="justify" style="font-size: .85em;font-weight: bold;"> {% autoescape off %} {{c.vul_no}} {% endautoescape %} </td></tr>
+						 
+						 {% endfor %}
+						 
+						 </table>
+						 <div style="background-color: #dff0d8; padding:7px;width:100%;color: #3c763d;border-color: #d6e9c6;">Vulnerable Forms :</div><br>
+						 <div>
+						  {% for v in vul_forms %}
+						  <b>{{v |linebreaksbr}}</b>
+						  {% endfor %}
+						 </div>
+						 <br>
+						 
+						 <div style="background-color: #dff0d8; padding:7px;width:35%;color: #3c763d;border-color: #d6e9c6;">&nbsp;For further details regarding the vulnerabilities click <a href="https://www.owasp.org/index.php/Testing_for_XML_Injection_(OTG-INPVAL-008)" style="text-decoration:none" target="_blank"><strong>here !</strong></a></div>
+                        </div>
+                        <!--<a href="/download?projectName={{ project.project_name }}">Save to PDF</a>-->
+						<div id="content_display" style="position:absolute;left:58%;top:24%;width:38%;max-height:600px;overflow:auto;border-width:1px;border-style:solidd;border-color:gray;"></div>
+                         <div id="content" style="display:none">
+						 {% for c in counters %}
+						 <div id="show_details_parent{{forloop.counter}}" style="width:90%;over-flow:scroll;border-width:1px;border-style:solidd;border-color:gray;display:none">
+						 <a href="#!" onclick="close_content({{forloop.counter}});">Close</a>
+						 <div style="width:100%;background-color:;height:30px;"><b>Details for {{c.vul_type}} :</b></div><br>
+						 <div id="show_details{{forloop.counter}}" >
+						  <div class="paaanel-body" style="background-color:#f5f5f5">
+						  <div style="background-color:gray;height:28px;padding-top:1px;padding-top:0px"><div><font color="white"><b>Anomalies found </b></font></div><br></div>
+						 <font style="font-size: .85em;color:gray;"><b>{{c.other_details|linebreaksbr}}</b></font>
+						 </div>
+						 </div>
+						 </div>
+						 {% endfor %}
+						 
+						 </div>
+						
+                  
+				   
+				  
+                    </div>
+					
+					<div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Scan Progress</h3>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <table class="table table-striped table-hover" style="font-size:100%">
+                                <colgroup>
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Status
+                                        </th>
+                                        <th>
+                                            No. of URLs found
+                                        </th>
+                                        <th>
+                                            No. of URLs processed
+                                        </th>
+                                        <th>
+                                            No. of vulnerabilities found
+                                        </th>
+                                    </tr>
+                                </thead>
+                                
+                                <tr>
+                                    <td id="status">
+                                        {{ project.status }}
+                                    </td>
+                                    <td>
+                                        {{ urls_found }}
+                                    </td>
+                                    <td>
+                                        {{ urls_processed }}
+                                    </td>
+                                    <td>
+                                        {{ vulns_found }}
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+						 
+                    
+                    
+
+                    
+
+                    {% endif %}
+                    {% else %}
+                    {% if projects %}
+
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <span class="glyphicon glyphicon-floppy-saved"></span> <strong> Please note!</strong> You can view the reports only if the project is not in 'In Progress' state.<br>Select the project from the drop down list whose report is to be viewed  and click upon View report.
+                    </div>
+
+                    <form class="form-horizontal" role="form" method="GET" action="">
+                        
+                        <!-- Set project name -->
+                        <div class="form-group">
+                            <label for="projectName" class="col-sm-2 control-label">Project Name</label>
+                            <div class="col-sm-5">
+                                <select class="form-control" name="projectName" id="projectName">
+                                {% for project in projects %}
+                                    <option value="{{ project }}">{{ project }}</option>                    
+                                {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- A neat blue button! -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-play-circle"></span> View Report</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                    {% else %}
+                    <p>No completed projects yet!</p>
+                    {% endif %}
+                    {% endif %}
+				<div id="center_loading" style="position:absolute;top:34%;left:27%;height:10%;width:600px;background-color:white;max-width:70%;display:none;border-style:solid;border-width:1px;">
+                    
+                    <br />
+                    <br />
+                    <div style="height :100px;">
+                    <img src ="/static/load.gif" style="position:relative ;left:260px;"/>
+                    <br />
+                    <font color="gray" size="6px" style="position:absolute  ;left:190px"><b>Loading......</b></font>
+                    <br />
+                    
+                    
+                    </div>
+                    <br />
+              
+                </div>
+					
+						 
+			
+
+{% endblock %}

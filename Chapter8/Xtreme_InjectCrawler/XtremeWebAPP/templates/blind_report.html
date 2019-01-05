@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %} Blind XPath Injection Details {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+		{% if project%}
+                    <!-- Heading! -->
+                    <h1 class="page-header">Blind XPath Injection Details</h1>
+
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Scan Details
+                                </h3>
+                            </div>
+                          
+                            <div class="panel-body">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Project Name</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.project_name }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Public IP</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.public_IP }}</p>
+                                        </div>
+                                    </div>
+                                    
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Method</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.method }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">URL</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.blind_URL }}</p>
+                                        </div>
+                                    </div>
+                                                                       
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Parameter Name</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.param_name }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Parameter Value</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.param_value }}</p>
+                                        </div>
+                                    </div>                                    
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Match String</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.match_string }}</p>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Project Status</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.project_status }}</p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Scan Log</h3>
+                            </div>
+
+                            <div class="panel-body">
+				{% for line in reportLines %}				
+					{{ line }}
+					<br>
+				{% endfor %}
+                            </div>
+                        </div>
+
+                    {% else %}
+                    {% if projectnames %}
+
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <span class="glyphicon glyphicon-floppy-saved"></span> <strong> Please note!</strong> You can view the reports only if the project is in 'Completed' state.
+                    </div>
+
+                    <form class="form-horizontal" role="form" method="GET" action="">
+                        
+                        <!-- Set project name -->
+                        <div class="form-group">
+                            <label for="projectName" class="col-sm-2 control-label">Project Name</label>
+                            <div class="col-sm-5">
+                                <select class="form-control" name="projectName" id="projectName">
+                                {% for projectname in projectnames %}
+                                    <option value="{{ projectname }}">{{ projectname }}</option>                    
+                                {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- A neat blue button! -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-play-circle"></span> View Report</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                    {% else %}
+                    <p>No completed projects yet!</p>
+                    {% endif %}
+                    {% endif %}
+				<div id="center_loading" style="position:absolute;top:25%;left:27%;height:10%;width:600px;background-color:white;max-width:70%;display:none;border-style:solid;border-width:1px;">
+                    
+                    <br />
+                    <br />
+                    <div style="height :100px;">
+                    <img src ="static/load.gif" style="position:relative ;left:260px;"/>
+                    <br />
+                    <font color="gray" size="6px" style="position:absolute  ;left:190px"><b>Loading......</b></font>
+                    <br />
+                    
+                    
+                    </div>
+                    <br />
+              
+                </div>
+
+{% endblock %}
+
+

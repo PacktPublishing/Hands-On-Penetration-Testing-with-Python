@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %} Blind injection overview {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+                   <div class="alert alert-success">
+                       
+                        <span class="glyphicon glyphicon-floppy-saved"></span> <strong> Please note!</strong>  <h5> This page displays status of the projects which have been already scanned for blind xpath injection vulnerabilities.To see the detailed report click upon the link under details tab... </h5>
+                    </div> 
+        
+                    <h2 class="sub-header">Details</h2>
+                    {% if projects %}
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" style="font-size:100%">
+                            <thead>
+                                <tr>
+                                    <th># {{ length }}</th>
+                                    <th>Project Name</th>
+                                    <th>Progress</th>
+                                    <th>Successful retrieval of XML</th>
+                                    <th>Details</th>
+                                    <th>View Report</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                {% for project in projects %}
+                                <tr>
+                                    <td class="td_table">{{ project.count }}</td>
+                                    <td width="100">{{ project.project_name }}</td>
+                                    <td style="color:green"><strong>{{ project.project_status}}</strong></td>
+                                    <td>{{ project.success_flg }}</td>
+                                    <td><a href="/blind_details?projectName={{ project.project_name }}">Details -- {{ project.project_name }}</a></td>
+                                    {% if project.project_status == 'Completed' %}
+                                    <td><a class="btn btn-primary btn-xs" href="/blind_report?projectName={{ project.project_name }}">View Report</a></td>
+				    {% else %}
+				    <td></td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <p>No projects yet!</p>
+                    {% endif %}
+                </div>
+            
+{% endblock %}
+
+

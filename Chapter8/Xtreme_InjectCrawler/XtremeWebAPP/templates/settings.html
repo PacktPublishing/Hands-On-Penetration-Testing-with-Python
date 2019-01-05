@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %} Edit Default Settings {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                    <!-- Heading! -->
+                    <h1 class="page-header">Edit Default Settings</h1>
+					 <div class="alert alert-success">
+                       
+                        <span class="glyphicon glyphicon-floppy-saved"></span> <strong> Please note!</strong>  <h5> Fill in the required detailes and click upon save changes in order to update the default settings... </h5>
+                    </div> 
+        
+
+                    {% if updated %}<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span class="glyphicon glyphicon-floppy-saved"></span><strong> Updated!</strong> Your changes have been updated!</div>{% endif %}
+
+                    <form class="form-horizontal" role="form" method="POST" action="">
+                        <!-- CSRF - Yoyo! -->
+                        {% csrf_token %}
+                                
+                        <!-- Set Allowed Protocols -->
+                        <div class="form-group">
+                            <label for="allowedProtocols" class="col-sm-2 control-label">Allowed Protocols</label>
+                            <div class="col-sm-5">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="allowedProtocols[]" id="allowedProtocols" value="http" {% if 'http' in settings.allowed_protocols %}checked="checked"{% endif %}> HTTP
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="allowedProtocols[]" id="allowedProtocols" value="https" {% if 'https' in settings.allowed_protocols %}checked="checked"{% endif %}> HTTPS
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Set Allowed Extensions -->
+                        <div class="form-group">
+                            <label for="allowedExtensions" class="col-sm-2 control-label">Allowed Extensions</label>
+                            <div class="col-sm-5">
+                                <textarea id="allowedExtensions" name="allowedExtensions" class="form-control" rows="3" spellcheck="false">{{ settings.allowed_extensions }}</textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Consider only these input types -->
+                        <div class="form-group">
+                            <label for="toConsider" class="col-sm-2 control-label">Consider Only</label>
+                            <div class="col-sm-5">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="textareas" {% if 'textareas' in settings.consider_only %}checked="checked"{% endif %}> Textareas
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="checkboxes" {% if 'checkboxes' in settings.consider_only %}checked="checked"{% endif %}> Checkboxes and Radios
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="selects" {% if 'selects' in settings.consider_only %}checked="checked"{% endif %}> Selects
+                                </label>
+                                
+                                <!-- its looking awkward!. So, new line! -->
+                                <br>
+                                
+                                <!--<label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="cookies" {% if 'cookies' in settings.consider_only %}checked="checked"{% endif %}> Cookies
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="sessions" {% if 'sessions' in settings.consider_only %}checked="checked"{% endif %}> Session Variables
+                                </label>-->
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="inputs" {% if 'inputs' in settings.consider_only %}checked="checked"{% endif %}> Input Tags
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Exclude input types with names and ids as this -->
+                        <div class="form-group">
+                            <label for="toExclude" class="col-sm-2 control-label">Exclude these fields</label>
+                            <div class="col-sm-5">
+                                <textarea id="toExclude" name="toExclude" class="form-control" rows="2" spellcheck="false">{{ settings.exclude }}</textarea>
+                            </div>
+                        </div>
+                      
+
+                        <!-- Include Auth Information -->
+                        
+                            <label for="toExclude"><font color="">Authentication Information</font></label><br><br>
+                            <div class="form-group">
+                                <label for="loginURL" class="col-sm-2 control-label">Login URL</label>
+                                <div class="col-sm-5">
+                                        <input type="text" name="loginURL" id="loginURL" placeholder="http://example.com/login" class="form-control" onclick="close_all();"></input>
+		                </div>
+                                <br><br>
+                                <label for="logoutURL" class="col-sm-2 control-label">Logout URL</label>
+				<div class="col-sm-5">
+                                        <input type="text" name="logoutURL" id="logoutURL" placeholder="http://example.com/logout" class="form-control" onclick="close_all();"></input>
+				</div>
+                                <br><br>
+			    </div>
+                            <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Field name for Username</label>
+				<div class="col-sm-5">
+                                        <input id="toAuthUsernameField" name="toAuthUsernameField" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Text_box_user"></input>                        
+                                </div>
+			    </div>
+			    <div class="form-group">
+				<label for="toExclude" class="col-sm-2 control-label">Username</label>
+				<div class="col-sm-5">
+                                        <input id="toAuthUsername" name="toAuthUsername" class="form-control" width="20" rows="1" spellcheck="false" value={{ settings.username }} onclick="close_all();"></input>                        
+                                </div>
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Field name for Password</label>
+                                <div class="col-sm-5">
+					<input id="toAuthPasswordField" name="toAuthPasswordField" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Text_box_password"></input>
+                                </div>								
+			    </div>
+							  
+			    <div class="form-group">	
+				<label for="toExclude" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-5">
+				        <input id="toAuthPassword" name="toAuthPassword" class="form-control" width="20" rows="1" spellcheck="false" value={{ settings.password }} onclick="close_all();"></input>
+                                </div>
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Additional Parameters</label>
+                                <div class="col-sm-5">
+				        <input id="authParameters" name="authParameters" class="form-control" width="20" rows="1" spellcheck="false" placeholder="field1:value1,field2:value2"></input>
+                                </div>	
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Auth Mode (CSRF token)</label>
+                                <div class="col-sm-5">
+				        <input id="toAuthMode" name="toAuthMode" class="form-control" width="20" rows="1" spellcheck="false" value={{ settings.auth_mode }} onclick="close_all();"></input>
+                                </div>
+			    </div> 
+                        <!-- A neat blue button! -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span> Save Settings</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                
+                </div>
+            </div>
+        </div>
+{% endblock %}

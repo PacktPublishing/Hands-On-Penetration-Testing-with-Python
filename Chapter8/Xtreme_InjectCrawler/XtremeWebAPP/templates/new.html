@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+
+{% block title %} Add New Scan {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                    <!-- Heading! -->
+                    <h1 class="page-header">Add a New Scan</h1>
+
+                    {% if success == 'False' %}<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span class="glyphicon glyphicon-floppy-remove"></span><strong> Error!</strong> Xtreme encountered an error while starting the scan. This may be because there is another project with this name already! Please check your configuration</div>{% endif %}
+                    <div class="col-sm-5" id="floating_start" style="display:none;position:absolute;top:8%;left:60%;width:20%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							<div class="col-sm-5" style="background-color:black;width:100%;height:20px"><font color="white" size="1px" style="position:relative;left:30%"><b>Start Url Example</b></font></div>
+							<div style="width:90%;max-width:90%"><font color="red" size="1px"><b><br>Seed url includes:<br>
+							<ul><li>The protocol (http,https ,etc)</li><li> The domain name (localhost or etc):</li><li> The  app name (if present)</li><li> The index page/start page</li> <br>
+							For eg : <br>
+							
+							<li>
+							Example 1 : <br>http://localhost:8000/MYapp/index.jsp<br><br>
+							</li>
+							<li>
+							Example 2 (Without app name) : <br>http://www.mysite.com/index.php<br>
+							
+							</li>
+							</ul>
+							</b>
+							</font>
+							</div>
+					</div>
+					<div class="col-sm-5" id="floating_username" style="display:none;position:absolute;top:8%;left:60%;width:20%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:20px"><font color="white" size="1px" style="position:relative;left:30%"><b>Username Field example</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><b><font color="red" size="1px"><br>User name Field :<br>
+							    <ul><li>Specify the name/id of the form-element/text-field of your application that will have the user name /email /id or any other required credentials</li><br>
+								<li>If your app/wesbite is running ,you can right click on that field and from the opened menu go to inspect element option,that will read you the name or id of the field</li>
+								</ul>
+							    </b>
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_password" style="display:none;position:absolute;top:8%;left:60%;width:20%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:20px"><font color="white" size="1px" style="position:relative;left:30%"><b>Password Field example</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><b><font color="red" size="1px"><br>Password Field :<br>
+							    <ul><li>Specify the name/id of the form-element/text-field of your application that will have the Password or any other required credentials</li><br>
+								<li>If your app/wesbite is running ,you can right click on that field and from the opened menu go to inspect element option,that will read you the name or id of the field</li>
+								</ul>
+							    </b>
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					
+					<div class="col-sm-5" id="floating_login" style="display:none;position:absolute;top:8%;left:60%;width:20%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:20px"><font color="white" size="1px" style="position:relative;left:30%"><b>Login URL</b></font></div>
+							    <div style="width:90%;max-width:90%"><br>
+							    <ul><li>Specify the URL that contains the login form of the web application to be tested .</li><br>
+								<li>If your app/website is running ,you can go to the website and check the URL in the address bar</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_logout" style="display:none;position:absolute;top:8%;left:60%;width:20%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:20px"><font color="white" size="1px" style="position:relative;left:30%"><b>Logout URL</b></font></div>
+							    <div style="width:90%;max-width:90%"><br>
+							    <ul><li>Specify the logout URL of your web application to be tested.</li><br>
+								<li>If your app/website is running ,you can go to the website and check the URL .</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_add" style="display:none;position:absolute;top:8%;left:60%;width:20%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:20px"><font color="white" size="1px" style="position:relative;left:30%"><b>Additional Parameters</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="red" size="1px">
+							    <ul><li>If your web application to be tested requires any additional authentication information apart from user name and password to login ..For example :  .</li><br>
+								<li>Registration no :133   <br>Role : admin ..etc. <br>A user needs to specify all additional authentication parameters and their values in this section in a comma separated manner<br>.For example <br>
+								Role:admin,DOB:01-01-2002<br>The shown example assumes that the login form <b>apart from user name/email/id and password field</b> contains  two other text fields named as "Role" and the expected valid value is : "admin"<br>
+								The other expected parameter is "DOB" with expected valid value :"01-01-2002"<br>
+								<b>Therefore if any login form may have more then two authentication fields,the third one and the expected value of the third one is to be specified here</b><br>
+								<strong>Note !..  </strong> If there are no additional parameters at the login form,a user may leave this field blank or may specify a default value as "none :none"  </li>
+								
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_logout" style="display:none;position:absolute;top:8%;left:60%;width:20%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:20px"><font color="white" size="1px" style="position:relative;left:30%"><b>CSRF token</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><b><font color="red" size="1px">
+							    <ul><li>CSRF token is used to safe guard web applications against cross site request forgery .Its usually used with modern Frameworks such as Django and etc.</li><br>
+								<li>If your app/website does not use any CSRF token leave this field with the default value "Q8fZUKGdyX7zMOkiJfisR2ae26xcWaYs" in it  .</li>
+								</ul>
+							    </b>
+							   </font>
+							   <br>
+							   </div>
+					</div>
+                    <form class="form-horizontal" role="form" method="POST" action="" onSubmit="return check();">
+                        <label for="toExclude"><font color="">Project Information</font></label><br><br>
+                        <!-- Set project name -->
+                        <div class="form-group">
+                            <label for="projectName" class="col-sm-2 control-label">Project Name</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="projectName" id="projectName" placeholder="Xtreme_Project_1" onclick="close_all();">
+                            </div>
+                        </div>
+                        
+                        <!-- Set Start URL -->
+                        <div class="form-group">
+                            <label for="startURL" class="col-sm-2 control-label">Seed URLs</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="startURL" id="startURL" placeholder="http://example1.com,http://example2.com">
+                            </div>
+							
+                        </div>
+						
+                        
+                        <!-- Set Query URL -->
+                        <!--<div class="form-group">
+                            <label for="queryURL" class="col-sm-2 control-label">Query URL</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="queryURL" id="queryURL" placeholder="http://example.com/query">
+                            </div>
+                        </div>-->
+                        
+                        <!-- CSRF - Yoyo! -->
+                        {% csrf_token %}
+                                
+                        <!-- Set Allowed Protocols -->
+                        <div class="form-group">
+                            <label for="allowedProtocols" class="col-sm-2 control-label">Allowed Protocols</label>
+                            <div class="col-sm-5">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="allowedProtocols[]" id="allowedProtocols" value="http" {% if 'http' in settings.allowed_protocols %}checked="checked"{% endif %}> HTTP
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="allowedProtocols[]" id="allowedProtocols" value="https" {% if 'https' in settings.allowed_protocols %}checked="checked"{% endif %}> HTTPS
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Set Allowed Extensions -->
+                        <div class="form-group">
+                            <label for="allowedExtensions" class="col-sm-2 control-label">Allowed Extensions</label>
+                            <div class="col-sm-5">
+                                <textarea id="allowedExtensions" name="allowedExtensions" class="form-control" rows="3" spellcheck="false" onclick="close_all();">{{ settings.allowed_extensions }}</textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Consider only these input types -->
+                        <div class="form-group">
+                            <label for="toConsider" class="col-sm-2 control-label">Consider Only</label>
+                            <div class="col-sm-5">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="textareas" {% if 'textareas' in settings.consider_only %}checked="checked"{% endif %}> Textareas
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="checkboxes" {% if 'checkboxes' in settings.consider_only %}checked="checked"{% endif %}> Checkboxes and Radios
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="selects" {% if 'selects' in settings.consider_only %}checked="checked"{% endif %}> Selects
+                                </label>
+                                
+                                <!-- its looking awkward!. So, new line! -->
+                                
+                                
+                                <!--<label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="cookies" {% if 'cookies' in settings.consider_only %}checked="checked"{% endif %}> Cookies
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="sessions" {% if 'sessions' in settings.consider_only %}checked="checked"{% endif %}> Session Variables
+                                </label>-->
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="inputs" {% if 'inputs' in settings.consider_only %}checked="checked"{% endif %}> Input Tags
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Exclude input types with names and ids as this -->
+                        <div class="form-group">
+                            <label for="toExclude" class="col-sm-2 control-label">Exclude these fields</label>
+                            <div class="col-sm-5">
+                                <textarea id="toExclude" name="toExclude" class="form-control" rows="2" spellcheck="false" onclick="close_all();">{{ settings.exclude }}</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Include Auth Information -->
+                            <label for="toExclude"><font color="">Authentication Information</font></label><br><br>
+                            <div class="form-group">
+                                <label for="loginURL" class="col-sm-2 control-label">Login URL</label>
+                                <div class="col-sm-5">
+                                        <input type="text" name="loginURL" id="loginURL" placeholder="http://example.com/login" class="form-control" onclick="close_all();"></input>
+		                </div>
+                                <br><br>
+                                <label for="logoutURL" class="col-sm-2 control-label">Logout URL</label>
+				<div class="col-sm-5">
+                                        <input type="text" name="logoutURL" id="logoutURL" placeholder="http://example.com/logout" class="form-control" onclick="close_all();"></input>
+				</div>
+                                <br><br>
+			    </div>
+                            <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Field name for Username</label>
+				<div class="col-sm-5">
+                                        <input id="toAuthUsernameField" name="toAuthUsernameField" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Text_box_user"></input>                        
+                                </div>
+			    </div>
+			    <div class="form-group">
+				<label for="toExclude" class="col-sm-2 control-label">Username</label>
+				<div class="col-sm-5">
+                                        <input id="toAuthUsername" name="toAuthUsername" class="form-control" width="20" rows="1" spellcheck="false" value={{ settings.username }} onclick="close_all();"></input>                        
+                                </div>
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Field name for Password</label>
+                                <div class="col-sm-5">
+					<input id="toAuthPasswordField" name="toAuthPasswordField" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Text_box_password"></input>
+                                </div>								
+			    </div>
+							  
+			    <div class="form-group">	
+				<label for="toExclude" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-5">
+				        <input id="toAuthPassword" name="toAuthPassword" class="form-control" width="20" rows="1" spellcheck="false" value={{ settings.password }} onclick="close_all();"></input>
+                                </div>
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Additional Parameters</label>
+                                <div class="col-sm-5">
+				        <input id="authParameters" name="authParameters" class="form-control" width="20" rows="1" spellcheck="false" placeholder="field1:value1,field2:value2"></input>
+                                </div>	
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Auth Mode (CSRF token)</label>
+                                <div class="col-sm-5">
+				        <input id="toAuthMode" name="toAuthMode" class="form-control" width="20" rows="1" spellcheck="false" value={{ settings.auth_mode }} onclick="close_all();"></input>
+                                </div>
+			    </div> 
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" value="remember"/> Remember these settings
+                                    </label>
+									<br>
+									
+									<label>
+                                        <input type="checkbox" name="parllel" id="parllel" value="parllel" onclick="open_parllel();"/> Are you running this scan as a parallel scan ?
+                                    </label>
+                                </div>
+							</div>
+						</div>
+						<div class="form-group" id="parllel_box" style="display:none">
+								 <label for="queueName" class="col-sm-2 control-label">Enter a valid virtual storage name</label>
+								<div  class="col-sm-5">
+								
+								<input id="queueName" name="queueName" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Any valid name of 5 digits at least"></input>
+								</div>
+								
+						</div>
+                            
+                       
+                        
+                        <!-- A neat blue button! -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-play-circle"></span> Start Scanning</button>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Checkbox to remember the settings -->
+                        
+                        
+                    </form>
+                
+                </div>
+            </div>
+        </div>
+{% endblock %}

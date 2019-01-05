@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/khan/Downloads/Xtr1.8_.01/Xtreme_InjectCrawler/XtremeWebAPP/run_crawler.py", line 5, in <module>
+    from crawler import Crawler
+  File "/home/khan/Downloads/Xtr1.8_.01/Xtreme_InjectCrawler/XtremeWebAPP/crawler.py", line 612
+    self.page_list.append(self.current_visiting.URL)
+    ^
+IndentationError: unexpected indent

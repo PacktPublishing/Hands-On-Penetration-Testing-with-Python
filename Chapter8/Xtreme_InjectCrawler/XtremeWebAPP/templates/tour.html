@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}
+<script type="text/javascript">
+function get_me()
+{
+//alert("hello");
+//document.getElementById("purpose").style.backgroundColor="#f5f5f5";
+//alert(document.getElementById("purpose").style.backgroundColor);
+}
+
+</script>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+<div id="menu" style="position:relative;left:15%"><span class="btn btn-primary"  style="position:relative;left:6%;background-color:white;border-color:black;color:black;border-style:none"><span class="glyphicon glyphicon-play-circle" style="color:black"></span><a href="#"  style="text-decoration:none;color:black">&nbsp;Requirements</a></span><span class="btn btn-primary"  style="position:relative;left:13%;background-color:white;border-color:black;color:black;border-style:none"><span class="glyphicon glyphicon-play-circle" style="color:black"></span><a href="#prerequisites" style="text-decoration:none;color:black">&nbsp;Prerequisites for Usage</a></span><span class="btn btn-primary"  style="position:relative;left:21%;background-color:white;border-color:black;color:black;border-style:none"><span class="glyphicon glyphicon-play-circle" style="color:black"></span><a href="#Tour" style="text-decoration:none;color:black">&nbsp;Product Tour</a></span><span class="btn btn-primary"  style="position:relative;left:29%;background-color:white;border-color:black;color:black;border-style:none"><span class="glyphicon glyphicon-play-circle" style="color:black"></span><a href="#refrences" style="text-decoration:none;color:black">&nbsp;References</a></span></div>
+                    <br>
+                    <h3 style="position :relative;left:26%;border-style:none;">Full-Coverage Application Security Scanner :XTREME</h3>
+					<br>
+					<br>
+					<div id="requirements">
+					<div>
+                                 <span class="btn btn-primary" style="cursor:default"><strong><span class="glyphicon glyphicon-play-circle"></span>  Requirements : </strong></span>
+                    </div>
+				<br>
+					<ul>
+					<li>
+					<p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><strong>Technology support : </strong>Tool provides support for web applications developed using following languages : Python, PHP, Visual Basic, Java, C#, Ruby, Perl.</p>
+					</li>
+					<li>
+					<p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><strong>Back end Support : </strong>The tool provides support for any of the above mentioned technologies using Basex XML Database engine  at back end.Thus basex server needs to be installed on client machine that has web application to be tested.</p>
+					</li>
+					<li>
+					<p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><strong>Additional Requirements : </strong> The tool further requires Redis server ( key-value cache and store),to be installed and running on the client machine that has the web application to be tested.</p>
+					</li>
+					
+					
+					</div>
+					<br>
+					<br>
+					<div id ="prerequisites " style="width:100%;background-color:white;">
+					<div>
+                                <span class="btn btn-primary" style="cursor:default"><span class="glyphicon glyphicon-play-circle"></span> Prerequisites for usage</span>
+                    </div>
+					<br>
+					<div style="">
+					 <h4><strong>BasexClient File replacement Steps :</strong></h4>
+					<p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;">
+					The tool follows a black box approach towards  detection of vulnerabilities in web applications and thus 
+					driver modification for each technology is required to be done for capturing the queries that are sent to the database server. 
+					BaseX client files were modified for the following web technologies with respect to BaseX server being used as the XML back end persistent store: 
+					</p>
+					<ul>
+					<li>Python</li>
+					<li>PHP</li>
+					<li>Visual Basic</li>
+           			<li>Java</li>
+     				<li>C#</li>
+					<li>Ruby</li>
+					<li>Perl</li>
+                    </ul>					
+                   
+					<p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;">
+					Any web application using any the above mentioned technologies and Basex server at the backed could be used to test for vulnerabilities using this tool.
+					However a slight replacement needs to be done:<br>
+					The basexClient  file of application under test needs to be replaced by the basexClient file provided here :
+					<br>
+					Following are the links to the modified driver files which could be downloaded and saved and then replaced with basexClient file of application to be tested.
+					<ul>
+					<li>Python &nbsp;&nbsp;<a href="#">:&nbsp;&nbsp;BasexClient.py</a></li>
+					<li>PHP &nbsp;&nbsp;<a href="#">:&nbsp;&nbsp;BasexClient.php</a></li>
+					<li>Visual Basic &nbsp;&nbsp;<a href="#">:&nbsp;&nbsp;BasexClient.vb</a></li>
+           			<li>Java &nbsp;&nbsp;<a href="#">:&nbsp;&nbsp;BasexClient.java</a></li>
+     				<li>C# &nbsp;&nbsp;<a href="#">:&nbsp;&nbsp;BasexClient.c#</a></li>
+					<li>Ruby &nbsp;&nbsp;<a href="#">:&nbsp;&nbsp;BasexClient.rb</a></li>
+					<li>Perl &nbsp;&nbsp;<a href="#">:&nbsp;&nbsp;BasexClient.pl</a></li>
+					</ul>
+					</p>
+					</div>
+					<div>
+				
+					 <h4><strong>Basex installation :</strong></h4>
+					 <ul>
+					 <li>
+					<a href="http://basex.org/products/download/all-downloads/" target="_blank">www.basex.org</a>
+					 </li>
+					 </ul>
+					</div>
+					<div>
+					
+					 <h4><strong>Redis Queue installation :</strong></h4>
+					 <ul>
+					 <li>
+					<a href="http://redis.io/" target="_blank">www.redis.io</a>
+					 </li>
+					 </ul>
+					</div>
+					 </div>
+					 <br>
+					 <br>
+					 <div id ="Tour" style="width:100%">
+					<div>
+                                <span class="btn btn-primary" style="cursor:default"><span class="glyphicon glyphicon-play-circle"></span> Product Tour</span>
+                    </div>
+					<br>
+					<div style=""><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;">
+					<strong>Following are the steps in order to start a new scan </strong>
+					<ul>
+					<li><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><b>Step 1 :</b> Start the Basex server</p></li>
+					<br><li><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><b>Step 2 : </b> Start the Redis  server </p></li>
+					<br><li><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><b>Step 3 : </b> Start the web application server  which is to be tested (suppose its running on http://localhost:9254/sample/index.jsp)</p></li>
+					<br><li><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><b>Step 4 : </b>Go to the scan tab and click upon start new scan<a href="#" id="step04">Click here</a></p><br><div id="step4" style="display:none"><img src="/static/step1.JPG" style="width:80%;border-style:solid;border-width:1px;"></img></div></li>
+					<li><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><b>Step 5 : </b> To begin xml injection scan click upon Xml injection Scan tab <a href="#" id="step05">Click here</a></p><br><div id="step5" style="display:none"><img src="/static/step2.JPG" style="width:80%;border-style:solid;border-width:1px;" ></img></div></li>
+					<li><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><b>Step 6 : </b>Now fill in all the required fields which will be needed to scan the web application and once all the fields are filled click upon start scanning button <a href="#" id="step06">Click here</a></p> <br><div id="step6" style="display:none"><img src="/static/step3.JPG" style="width:80%;border-style:solid;border-width:1px;" ></img></div></li>
+					<li><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><b>Step 7 : </b>Now the tool will start scanning the web application and once the scan is finished the following screen will be displayed .
+					.One can see the report by clicking upon the view report tab. <a href="#" id="step07">Click here</a></p><br><div id="step7" style="display:none"><img src="/static/step4.JPG" style="width:80%;border-style:solid;border-width:1px;" ></img></div></li>
+					<li><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><b>Step 8 :</b>Here a user can view the detailed report of the tool.It contains the vulnerabilities and other details.
+					.In order to view the details of each vulnerability a user can click upon the number beneath the # vulnerabilities tab.As shown in figure : <a href="#" id="step08">Click here</a></p><br><div id="step8" style="display:none"><img src="/static/step6.JPG" style="width:80%;border-style:solid;border-width:1px;" ></img></div></li>
+					<li><p style="text-align:justify;line-height:150%;color:#444444;font-size:14px;"><b>Step 9 :</b>.In order to download the report one must click the download tab. <a href="#" id="step09">Click here</a></p><br><div id="step9" style="display:none"><img src="/static/step5.JPG" style="width:80%;border-style:solid;border-width:1px;" ></img></div></li>
+					
+					</ul>
+
+					
+					</div>
+					<br><br>
+					 </div>
+					 <div id ="refrences" style="width:100%">
+					<div>
+                                <span class="btn btn-primary" style="cursor:default"><span class="glyphicon glyphicon-play-circle"></span> Refrence Links</span>
+                    </div>
+					<br>
+					<ul>
+					 <li>
+					<a href="http://redis.io/" target="_blank">Complete User Manual</a>
+					 </li>
+					 </ul>
+					
+					</div>
+					 </div>
+{% endblock %}

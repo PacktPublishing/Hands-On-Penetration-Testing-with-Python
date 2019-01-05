@@ -1,0 +1,678 @@
+/home/khan/.local/lib/python2.7/site-packages/requests/__init__.py:83: RequestsDependencyWarning: Old version of cryptography ([1, 2, 3]) may cause slowdown.
+  warnings.warn(warning, RequestsDependencyWarning)
+
+/home/khan/.local/lib/python2.7/site-packages/bs4/element.py:1654: UserWarning: has_key is deprecated. Use has_attr("action") instead.
+  key))
+
+/home/khan/.local/lib/python2.7/site-packages/bs4/element.py:1654: UserWarning: has_key is deprecated. Use has_attr("name") instead.
+  key))
+
+/home/khan/.local/lib/python2.7/site-packages/bs4/element.py:1654: UserWarning: has_key is deprecated. Use has_attr("id") instead.
+  key))
+
+/home/khan/.local/lib/python2.7/site-packages/bs4/element.py:1654: UserWarning: has_key is deprecated. Use has_attr("method") instead.
+  key))
+
+/home/khan/.local/lib/python2.7/site-packages/bs4/element.py:1654: UserWarning: has_key is deprecated. Use has_attr("type") instead.
+  key))
+
+/home/khan/.local/lib/python2.7/site-packages/bs4/element.py:1654: UserWarning: has_key is deprecated. Use has_attr("for") instead.
+  key))
+
+/home/khan/.local/lib/python2.7/site-packages/bs4/element.py:1654: UserWarning: has_key is deprecated. Use has_attr("value") instead.
+  key))
+
+[Mon Dec  3 17:37:33 2018] - crawler_info: Initializing the Crawler DVWA_test
+[Mon Dec  3 17:37:33 2018] - crawler_info: Adding 127.0.0.1 to scope
+[Mon Dec  3 17:37:33 2018] - crawler_info: Initialized the Crawler DVWA_test
+[Mon Dec  3 17:37:33 2018] - crawler_info: Starting the discovery process with auth: False and seed URLs: http://127.0.0.1/dvwa
+[Mon Dec  3 17:37:33 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa with auth status: False
+[Mon Dec  3 17:37:33 2018] - Crawler: Response code produced is 301
+[Mon Dec  3 17:37:33 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/login.php
+[Mon Dec  3 17:37:33 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/login.php
+[Mon Dec  3 17:37:33 2018] - Crawler: Response code produced is 302
+[Mon Dec  3 17:37:33 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/login.php
+[Mon Dec  3 17:37:33 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:33 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:33 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa with auth status: False
+[Mon Dec  3 17:37:33 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/login.php with auth status: False
+[Mon Dec  3 17:37:33 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/login.php
+[Mon Dec  3 17:37:33 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/login.php with action POST with auth status: False
+[Mon Dec  3 17:37:33 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/login.php with auth status: False
+[Mon Dec  3 17:37:33 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/ with auth status: False
+[Mon Dec  3 17:37:33 2018] - Crawler: Response code produced is 302
+[Mon Dec  3 17:37:33 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/login.php
+[Mon Dec  3 17:37:34 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/ with auth status: False
+[Mon Dec  3 17:37:34 2018] - crawler_info: Starting the discovery process with auth: True and seed URLs: http://127.0.0.1/dvwa
+[Mon Dec  3 17:37:34 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/login.php
+[Mon Dec  3 17:37:34 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/login.php
+[Mon Dec  3 17:37:34 2018] - crawler_info: reached here 3 %s  :  
+[Mon Dec  3 17:37:34 2018] - crawler_info: reached here 4 %s  :  
+[Mon Dec  3 17:37:34 2018] - crawler_info: reached here 4 %s  :  
+[Mon Dec  3 17:37:34 2018] - crawler_info: reached here 4 %s  :  
+['none', 'none']
+[Mon Dec  3 17:37:34 2018] - crawler_info: login form is http://127.0.0.1/dvwa/login.php  :  
+[Mon Dec  3 17:37:34 2018] - crawler_info: posted payload is {u'username': u'admin', u'Login': u'Login', u'password': u'password', 'csrfmiddlewaretoken': u'Q8fZUKGdyX7zMOkiJfisR2ae26xcWaYs', 'none': 'none'}  
+[Mon Dec  3 17:37:34 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/login.php with auth status: True
+[Mon Dec  3 17:37:34 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:34 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/login.php:  
+[Mon Dec  3 17:37:34 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/login.php
+[Mon Dec  3 17:37:34 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/login.php with action POST with auth status: True
+[Mon Dec  3 17:37:34 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/login.php with auth status: True
+[Mon Dec  3 17:37:34 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa with auth status: True
+[Mon Dec  3 17:37:34 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:34 2018] - Crawler: Response code auth true produced is 301
+[Mon Dec  3 17:37:34 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:34 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:34 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa:  
+[Mon Dec  3 17:37:34 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:34 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa with auth status: True
+[Mon Dec  3 17:37:34 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/ with auth status: True
+[Mon Dec  3 17:37:34 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:34 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/:  
+[Mon Dec  3 17:37:34 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:34 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:34 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:35 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:35 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.apachefriends.org/en/xampp.html
+[Mon Dec  3 17:37:36 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/ with auth status: True
+[Mon Dec  3 17:37:36 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/instructions.php with auth status: True
+[Mon Dec  3 17:37:36 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:36 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/instructions.php:  
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=readme
+[Mon Dec  3 17:37:36 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/instructions.php?doc=readme
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=changelog
+[Mon Dec  3 17:37:36 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/instructions.php?doc=changelog
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=copying
+[Mon Dec  3 17:37:36 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/instructions.php?doc=copying
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license
+[Mon Dec  3 17:37:36 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.randomstorm.com/images/dvwa
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.gnu.org/licenses/.
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?https://github.com/RandomStorm/DVWA/archive/v1.0.8.zip
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.dvwa.co.uk/DVWA
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.youtube.com/watch?v=GzIj07jt8rM
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.apachefriends.org/en/xampp.html
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://127.0.0.1/dvwa/index.php
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://code.google.com/p/dvwa/issues/list
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.dvwa.co.uk
+[Mon Dec  3 17:37:36 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?https://github.com/RandomStorm/DVWA
+[Mon Dec  3 17:37:37 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/instructions.php with auth status: True
+[Mon Dec  3 17:37:37 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/setup.php with auth status: True
+[Mon Dec  3 17:37:37 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:37 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/setup.php:  
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/setup.php with action POST with auth status: True
+[Mon Dec  3 17:37:37 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/setup.php with auth status: True
+[Mon Dec  3 17:37:37 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/brute/ with auth status: True
+[Mon Dec  3 17:37:37 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:37 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/brute/:  
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.owasp.org/index.php/Testing_for_Brute_Force_%28OWASP-AT-004%29
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.securityfocus.com/infocus/1192
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.sillychicken.co.nz/Security/how-to-brute-force-http-forms-in-windows.html
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/vulnerabilities/brute/ with action GET with auth status: True
+[Mon Dec  3 17:37:37 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/ with auth status: True
+[Mon Dec  3 17:37:37 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/exec/ with auth status: True
+[Mon Dec  3 17:37:37 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:37 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/exec/:  
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.scribd.com/doc/2530476/Php-Endangers-Remote-Code-Execution
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.ss64.com/bash/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.ss64.com/nt/
+[Mon Dec  3 17:37:37 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/vulnerabilities/exec/ with action POST with auth status: True
+[Mon Dec  3 17:37:38 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/ with auth status: True
+[Mon Dec  3 17:37:38 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/ with auth status: True
+[Mon Dec  3 17:37:38 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:38 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/csrf/:  
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.owasp.org/index.php/Cross-Site_Request_Forgery
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.cgisecurity.com/csrf-faq.html
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://en.wikipedia.org/wiki/Cross-site_request_forgery
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/vulnerabilities/csrf/ with action GET with auth status: True
+[Mon Dec  3 17:37:38 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/ with auth status: True
+[Mon Dec  3 17:37:38 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/ with auth status: True
+[Mon Dec  3 17:37:38 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:38 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/captcha/:  
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?https://www.google.com/recaptcha/admin/create
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.captcha.net/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.google.com/recaptcha/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://www.google.com/recaptcha/api/noscript?k=
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/vulnerabilities/captcha/ with action POST with auth status: True
+[Mon Dec  3 17:37:38 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/ with auth status: True
+[Mon Dec  3 17:37:38 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php with auth status: True
+[Mon Dec  3 17:37:38 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:38 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php:  
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://en.wikipedia.org/wiki/Remote_File_Inclusion
+[Mon Dec  3 17:37:38 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.owasp.org/index.php/Top_10_2007-A3
+[Mon Dec  3 17:37:39 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/ with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:39 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/sqli/:  
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.securiteam.com/securityreviews/5DP0N1P76E.html
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://en.wikipedia.org/wiki/SQL_injection
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://ferruh.mavituna.com/sql-injection-cheatsheet-oku/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/vulnerabilities/sqli/ with action GET with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/ with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/ with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:39 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/:  
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.securiteam.com/securityreviews/5DP0N1P76E.html
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://en.wikipedia.org/wiki/SQL_injection
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://ferruh.mavituna.com/sql-injection-cheatsheet-oku/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/ with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/upload/ with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:39 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/upload/:  
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.owasp.org/index.php/Unrestricted_File_Upload
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://blogs.securiteam.com/index.php/archives/1268
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.acunetix.com/websitesecurity/upload-forms-threat.htm
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/vulnerabilities/upload/ with action POST with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/ with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/ with auth status: True
+[Mon Dec  3 17:37:39 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:39 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/xss_r/:  
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:39 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://ha.ckers.org/xss.html
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://en.wikipedia.org/wiki/Cross-site_scripting
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.cgisecurity.com/xss-faq.html
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/vulnerabilities/xss_r/ with action GET with auth status: True
+[Mon Dec  3 17:37:40 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/ with auth status: True
+[Mon Dec  3 17:37:40 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/ with auth status: True
+[Mon Dec  3 17:37:40 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:40 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/vulnerabilities/xss_s/:  
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://ha.ckers.org/xss.html
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://en.wikipedia.org/wiki/Cross-site_scripting
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.cgisecurity.com/xss-faq.html
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/vulnerabilities/xss_s/ with action POST with auth status: True
+[Mon Dec  3 17:37:40 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/ with auth status: True
+[Mon Dec  3 17:37:40 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/security.php with auth status: True
+[Mon Dec  3 17:37:40 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:40 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/security.php:  
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://php-ids.org/
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php?phpids=on
+[Mon Dec  3 17:37:40 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/security.php?phpids=on
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php?test=%22><script>eval(window.name)</script>
+[Mon Dec  3 17:37:40 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/security.php?test=%22><script>eval(window.name)</script>
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/ids_log.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/ids_log.php
+[Mon Dec  3 17:37:40 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:41 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/security.php with action POST with auth status: True
+[Mon Dec  3 17:37:41 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/security.php with auth status: True
+[Mon Dec  3 17:37:41 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/phpinfo.php with auth status: True
+[Mon Dec  3 17:37:41 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:41 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/phpinfo.php:  
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://www.php.net/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://www.zend.com/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/phpinfo.php with auth status: True
+[Mon Dec  3 17:37:42 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/about.php with auth status: True
+[Mon Dec  3 17:37:42 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:42 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/about.php:  
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.dvwa.co.uk/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://code.google.com/p/dvwa/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://code.google.com/p/dvwa/issues/list
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://dvwa.googlecode.com/svn/trunk/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.youreadmyblog.info/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.creativenucleus.com/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.designnewcastle.co.uk/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.ethicalhack3r.co.uk/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://tedi.heriyanto.net/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.tmacuk.co.uk/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.randomstorm.com/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.linux-ninja.com/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://brooksgarrett.com/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://php-ids.org/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license
+[Mon Dec  3 17:37:42 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/about.php with auth status: True
+[Mon Dec  3 17:37:42 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/logout.php with auth status: True
+[Mon Dec  3 17:37:42 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/instructions.php?doc=readme with auth status: True
+[Mon Dec  3 17:37:42 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:42 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/instructions.php?doc=readme:  
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=readme
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=changelog
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=copying
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.randomstorm.com/images/dvwa
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.gnu.org/licenses/.
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?https://github.com/RandomStorm/DVWA/archive/v1.0.8.zip
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.dvwa.co.uk/DVWA
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.youtube.com/watch?v=GzIj07jt8rM
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.apachefriends.org/en/xampp.html
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://127.0.0.1/dvwa/index.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://code.google.com/p/dvwa/issues/list
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.dvwa.co.uk
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?https://github.com/RandomStorm/DVWA
+[Mon Dec  3 17:37:42 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/instructions.php?doc=readme with auth status: True
+[Mon Dec  3 17:37:42 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/instructions.php?doc=changelog with auth status: True
+[Mon Dec  3 17:37:42 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:42 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/instructions.php?doc=changelog:  
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=readme
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=changelog
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=copying
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://hiderefer.com
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://www.dvwa.co.uk
+[Mon Dec  3 17:37:42 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?https://github.com/RandomStorm/DVWA
+[Mon Dec  3 17:37:43 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/instructions.php?doc=changelog with auth status: True
+[Mon Dec  3 17:37:43 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/instructions.php?doc=copying with auth status: True
+[Mon Dec  3 17:37:43 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:43 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/instructions.php?doc=copying:  
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=readme
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=changelog
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=copying
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://fsf.org/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/instructions.php?doc=copying with auth status: True
+[Mon Dec  3 17:37:43 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license with auth status: True
+[Mon Dec  3 17:37:43 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:43 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license:  
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=readme
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=changelog
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=copying
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://fsf.org/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/instructions.php?doc=PHPIDS-license with auth status: True
+[Mon Dec  3 17:37:43 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/security.php?phpids=on with auth status: True
+[Mon Dec  3 17:37:43 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:43 2018] - Crawler: Response code auth true produced is 302
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/security.php?phpids=on:  
+[Mon Dec  3 17:37:43 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/security.php?phpids=on with auth status: True
+[Mon Dec  3 17:37:43 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/security.php?test=%22><script>eval(window.name)</script> with auth status: True
+[Mon Dec  3 17:37:43 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:43 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/security.php?test=%22><script>eval(window.name)</script>:  
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://hiderefer.com/?http://php-ids.org/
+[Mon Dec  3 17:37:43 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php?phpids=off
+[Mon Dec  3 17:37:43 2018] - crawler_info: Adding the URL and marking it as unvisited: http://127.0.0.1/dvwa/security.php?phpids=off
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php?test=%22><script>eval(window.name)</script>
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/ids_log.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php?test=%22><script>eval(window.name)</script>
+[Mon Dec  3 17:37:44 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/security.php?test=%22><script>eval(window.name)</script> with auth status: True
+[Mon Dec  3 17:37:44 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/ids_log.php with auth status: True
+[Mon Dec  3 17:37:44 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:44 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/ids_log.php:  
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/instructions.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/setup.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/brute/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/exec/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/csrf/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/captcha/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/fi/?page=include.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/sqli_blind/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/upload/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_r/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/vulnerabilities/xss_s/
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/phpinfo.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/about.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/logout.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/ids_log.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found form on http://127.0.0.1/dvwa/ids_log.php with action GET with auth status: True
+[Mon Dec  3 17:37:44 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/ids_log.php with auth status: True
+[Mon Dec  3 17:37:44 2018] - crawler_info: Visiting URL: http://127.0.0.1/dvwa/security.php?phpids=off with auth status: True
+[Mon Dec  3 17:37:44 2018] - crawler_info: auth= true and username field : username and username value is : admin:  
+[Mon Dec  3 17:37:44 2018] - Crawler: Response code auth true produced is 302
+[Mon Dec  3 17:37:44 2018] - crawler_info: Found and checking the URL: http://127.0.0.1/dvwa/security.php
+[Mon Dec  3 17:37:44 2018] - crawler_info: posted again  with auth= true on url http://127.0.0.1/dvwa/security.php?phpids=off:  
+[Mon Dec  3 17:37:44 2018] - crawler_info: Finished processing the URL: http://127.0.0.1/dvwa/security.php?phpids=off with auth status: True

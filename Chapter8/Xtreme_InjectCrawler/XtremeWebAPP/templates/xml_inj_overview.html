@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                   
+					 <div class="alert alert-success">
+                       
+                        <span class="glyphicon glyphicon-floppy-saved"></span> <strong> Please note!</strong>  <h5> This page displays status of the projects which have been already scanned and which are currently under scan. It further also displays the total number of vulnerabilities discovered and  total scans performed by the tool.  </h5>
+                        In order to view the detalis of projects already scanned click upon the details <project name > link under the Details tab.<br>
+						To down load the report of scans that must have completed click upon the Download report link under the Report tab.<br>
+						To modify a completed scan click upon the modify button under the Action tab and to pause an ongoing scan click the pause button under the action tab.
+					</div> 
+        
+                    <div class="row placeholders">
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <h1 class="projectnumber">{{ progress.total.finished }}</h1>
+                            <h4>Projects Scanned</h4>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <h1 class="scaninprogress">{{ progress.total.inprogress }}</h1>
+                            <h4>Scans in Progress</h4>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <h1 class="vulnerable">{{ progress.total.vulns }}</h1>
+                            <h4>Vulnerabilities Found</h4>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <h1 class="totalprogress">{{ progress.total.percentage }}%</h1>
+                            <h4>Total Progress</h4>
+                        </div>
+                    </div>
+        
+                    <h2 class="sub-header">Details</h2>
+                    {% if progress.projects %}
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" style="font-size:100%">
+                            <thead>
+                                <tr>
+                                    <th># {{ length }}</th>
+                                    <th>Project Name</th>
+                                    <th>Progress</th>
+                                    <th># of URLs found</th>
+                                    <th># of URLs processed</th>
+                                    <th>Vulnerabilities found</th>
+                                    <th>Details</th>
+                                    <th>Report</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                {% for project in progress.projects %}
+                                <tr>
+                                    <td class="td_table">{{ project.count }}</td>
+                                    <td width="100">{{ project.name }}</td>
+                                    <td style="color:green"><strong>{{ project.status}}</strong></td>
+                                    <td>{{ project.urls }}</td>
+                                    <td>{{ project.processed }}</td>
+                                    <td>{{ project.vulns }}</td>
+                                    <td><a href="/details?proj_name={{ project.name }}">Details -- {{ project.name }}</a></td>
+                                    <td><form method="post" action="/reports"><a href="/reports?projectName={{ project.name }}"><span class="glyphicon glyphicon-save"></span> Download Report</a></form></td>
+                                    {% if project.status == 'In Progress' %}<td><a class="btn btn-danger btn-xs" onclick="send_kill('{{ project.name }}')">Stop</a></td>{% elif project.status == 'Finished'  %}<td><a class="btn btn-primary btn-xs" href="/resume?projectName={{ project.name }}">Modify</a></td>{% else %}<td><a class="btn btn-success btn-xs" href="/resume?projectName={{ project.name }}">Resume</a></td>{% endif %} 
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <p>No projects yet!</p>
+                    {% endif %}
+                </div>
+            
+{% endblock %}
+
+{% block scripts %}
+        <script>
+            function display_progress() {
+			//if(!{{ progress.total.inprogress }})
+			//{
+			//alert("hello a" + {{ progress.total.inprogress }});
+			//}
+                $.get("/progress",
+                    function(data){
+					data ="<div class='alert alert-success'> <span class='glyphicon glyphicon-floppy-saved'></span> <strong> Please note!</strong>  <h5> This page displays status of the projects which have been already scanned and which are currently under scan.  It further also displays the total number of vulnerabilities discovered and  total scans performed by the tool.  </h5>In order to view the detalis of projects already scanned click upon the details <project name > link under the Details tab.<br>To down load the report of scans that must have completed click upon the Download report link under the Report tab.<br>To modify a completed scan click upon the modify button under the Action tab and to pause an ongoing scan click the pause button under the action tab.</div> "+data;
+                     //data="hello";   
+						$('#dashboard_area').html(data);
+						//alert(data);
+						//alert("aa");
+						//alert("aa");
+                    }
+					//alert("aaa");
+                );
+                setTimeout(display_progress, 1200);
+            }
+            
+            display_progress();
+        </script>
+    
+        <script>
+            function send_kill(project_name) {
+                alert("inside send_kill script function")
+                $.get("/kill?project_name="+project_name,
+                    function(data){
+                    }
+                );
+            }
+        </script>
+{% endblock %}
+

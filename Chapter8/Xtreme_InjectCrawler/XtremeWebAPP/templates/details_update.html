@@ -1,0 +1,121 @@
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success"  id="percent" role="progressbar" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percentage }}%;">
+                                <strong>{{ percentage }}% Completed</strong>
+                            </div>
+                        </div>
+    
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Project Configuration
+                                </h3>
+                            </div>
+                          
+                            <div class="panel-body">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Project Name</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.project_name }}</p>
+                                        </div>
+                                    </div>
+                                    {% if project.status == 'Finished' %}
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">View Report</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static"><a class="btn btn-primary btn-xs" href="/reports?projectName={{ project.project_name }}">View Report</a></p>
+                                        </div>
+                                    </div>
+                                    {% endif %}                
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Start URL</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.start_url }}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--<div class="form-group">
+                                        <label class="col-sm-2 control-label">Query URL</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.query_url }}</p>
+                                        </div>
+                                    </div>-->
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Allowed Protocols</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ settings.allowed_protocols }}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Allowed Extensions</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ settings.allowed_extensions }}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Consider Only</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ settings.consider_only }}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Exclude Fields</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ settings.exclude }}</p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+    
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Scan Progress</h3>
+                            </div>
+                            
+                            <div class="panel-body">
+                                <table class="table table-striped table-hover" style="font-size:100%">
+                                    <colgroup>
+                                        <col class="col-xs-1">
+                                        <col class="col-xs-1">
+                                        <col class="col-xs-1">
+                                        <col class="col-xs-1">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Status
+                                            </th>
+                                            <th>
+                                                No. of URLs found
+                                            </th>
+                                            <th>
+                                                No. of URLs processed
+                                            </th>
+                                            <th>
+                                                No. of vulnerabilities found
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tr>
+                                        <td id="status">
+                                            {{ project.status }}
+                                        </td>
+                                        <td>
+                                            {{ urls_found }}
+                                        </td>
+                                        <td>
+                                            {{ urls_processed }}
+                                        </td>
+                                        <td>
+                                            {{ vulns_found }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>

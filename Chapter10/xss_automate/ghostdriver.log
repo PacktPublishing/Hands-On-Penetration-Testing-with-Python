@@ -1,0 +1,21 @@
+[INFO  - 2018-12-23T15:05:00.951Z] GhostDriver - Main - running on port 44639
+[INFO  - 2018-12-23T15:05:01.239Z] Session [1ed65370-06c4-11e9-80de-b9c18f7eef75] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-12-23T15:05:01.239Z] Session [1ed65370-06c4-11e9-80de-b9c18f7eef75] - page.customHeaders:  - {}
+[INFO  - 2018-12-23T15:05:01.239Z] Session [1ed65370-06c4-11e9-80de-b9c18f7eef75] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-12-23T15:05:01.239Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 1ed65370-06c4-11e9-80de-b9c18f7eef75
+[ERROR - 2018-12-23T15:05:05.641Z] Session [1ed65370-06c4-11e9-80de-b9c18f7eef75] - page.onError - msg: ReferenceError: Can't find variable: checkForm
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-23T15:05:05.642Z] Session [1ed65370-06c4-11e9-80de-b9c18f7eef75] - page.onError - stack:
+  onclick (http://192.168.250.1/dvwa/vulnerabilities/xss_s/:57)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+
+  phantomjs://platform/console++.js:263 in error

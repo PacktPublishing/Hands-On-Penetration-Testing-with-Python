@@ -1,0 +1,486 @@
+{% extends "base.html" %}
+
+{% block title %} Add New Scan {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}
+
+                    <br>
+					
+					
+					
+					
+					<div class="form-group">
+                           
+						     <div style="background-color:#dff0d8; border-color: #d6e9c6;padding: 15px; position:relative;left:0%;box-sizing: border-box;"><span class="glyphicon glyphicon-floppy-saved" style="position:relative;left:20%"></span> <span style="position:relative;left:20%"><strong> Please note !  </strong>Assuming all the <a href="\tour">prerequisites</a> are read and configured , a user may  click upon the provided tabs to begin with a new scan...</span></div>
+                            <br><div class="col-sm-offset-2 col-sm-10">
+                                <button  class="btn btn-primary" id="load"><span class="glyphicon glyphicon-play-circle"></span>&nbsp;&nbsp;New Crawl Request</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								 
+                            </div>
+                    </div>
+					
+					<br/>
+					<div id="logic_content"></div>
+					<div id="new_content" style="display:none;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:gray">
+					<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                    <!-- Heading! -->
+                    <h1 class="page-header">New crawl request</h1>
+
+                    {% if success == 'False' %}<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span class="glyphicon glyphicon-floppy-remove"></span><strong> Error!</strong> Crawler encountered an error while starting the scan. This may be because there is another project with this name already! Please check your configuration</div>{% endif %}
+                    <div class="col-sm-5" id="floating_start" style="display:none;position:absolute;top:8%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							<div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Start Url Example</b></font></div>
+							<div style="width:90%;max-width:90%"><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;"><br><br><div id="d1">&nbsp;&nbsp;<b>Seed url includes :</b><br><br>
+							<ul><li>The protocol (http,https ,etc)</li><li> The domain name (localhost or etc):</li><li> The  app name (if present)</li><li> The index page/start page</li> <br>
+							<b>For eg : </b><br>
+							
+							<li>
+							Example 1 : http://localhost:8000/MYapp/index.jsp
+							</li>
+							<li>
+							Example 2 (Without app name) : http://www.mysite.com/index.php
+							
+							</li>
+							</ul>
+							
+							</font>
+							</div>
+							</div>
+					</div>
+					<div class="col-sm-5" id="floating_username" style="display:none;position:absolute;top:8%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Username Field example</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;"><br>&nbsp;&nbsp;<b>User name Field :</b><br><br>
+							    <ul><li>Specify the name/id of the form-element/text-field of your application that will have the user name /email /id or any other required credentials</li><br>
+								<li>If your app/wesbite is running ,you can right click on that field and from the opened menu go to inspect element option,that will read you the name or id of the field</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_password" style="display:none;position:absolute;top:8%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Password Field example</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;"><br>&nbsp;&nbsp;<b>Password Field :</b><br><br>
+							    <ul><li>Specify the name/id of the form-element/text-field of your application that will have the Password or any other required credentials</li><br>
+								<li>If your app/wesbite is running ,you can right click on that field and from the opened menu go to inspect element option,that will read you the name or id of the field</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_login" style="display:none;position:absolute;top:8%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Login URL</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+							    <br>
+								<ul>
+								<li>Specify the URL that contains the login form of the web application to be tested .<br></li>
+								<li>If your app/website is running ,you can go to the website and check the URL in the address bar</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_logout" style="display:none;position:absolute;top:8%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Logout URL</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+							    <br>
+								<ul><li>Specify the logout URL of your web application to be tested.<br></li>
+								<li>If your app/website is running ,you can go to the website and check the URL .</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_add" style="display:none;position:absolute;top:8%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px" ><b>Additional Parameters</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+								<br>
+							    <ul>
+								<li>If your web application to be tested requires any additional authentication information apart from user name and password to login .For example :  <br></li>
+								<br><li>Registration no :133 ,Role : admin and  etc. <br>A user needs to specify all additional authentication parameters and their values in this section (parameter name :parameter value ) in a comma separated manner<br></li>
+								<br><li>
+								For example :
+								Role : admin , DOB : 01-01-2002 <br>The shown example assumes that the login form apart from <b>user name/email/id and password field</b> contains  two other text fields named as "Role" and the expected valid value is : "admin".
+								The other expected parameter is "DOB" with expected valid value :"01-01-2002"<br></li>
+								<br><li><b>Therefore if any login form may have more then two authentication fields,the third one and the expected value of the third one is to be specified here</b><br></li>
+								<br><li><strong>Note !..  </strong> If there are no additional parameters at the login form,a user may leave this field blank or may specify a default value as "none :none"  </li>
+								
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_queue" style="display:none;position:absolute;top:8%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Parllel Scan</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+								<br>
+							    <ul>
+								<li><strong>Note !</strong><br>In order to run a scan as a parallel scan,a user needs to specify a queue name in the queue name field and further more a user needs to put the same queue name in the config file <br>
+								</li><li>Config file is a simple text file "config.txt" which needs to be placed in the root of directory of the web application under test.<br></li>
+								<li>The exact location of where to place the config.txt file is technology dependent ,and to get the exact idea of where to place the config file click here :<br></li>
+								<br><li><strong><b>Note : Once the scan is completed (which is run in parallel),its very important for the user to clear off the contents of the config file. </b></strong></li>
+								</ul>
+							    
+							   </font>
+							 
+							   </div>
+					</div>
+					<div class="col-sm-5" id="floating_csrf" style="display:none;position:absolute;top:8%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>CSRF token</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+								<br>
+							    <ul>
+								<li>CSRF token is used to safe guard web applications against cross site request forgery.Its usually used with modern Frameworks such as Django and etc.<br></li>
+								<br><li>If your app/website does not use any CSRF token leave this field with the default value "Q8fZUKGdyX7zMOkiJfisR2ae26xcWaYs" in it  .</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					</div>
+                    <form class="form-horizontal" role="form" method="POST" action="/new" onSubmit="return check();">
+                        <label for="toExclude"><font color="">Project Information</font></label><br><br>
+                        <!-- Set project name -->
+                        <div class="form-group">
+                            <label for="projectName" class="col-sm-2 control-label">Project Name</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="projectName" id="projectName" placeholder="Crawler_Project_1" onclick="close_all();">
+                            </div>
+                        </div>
+                        
+                        <!-- Set Start URL -->
+                        <div class="form-group">
+                            <label for="startURL" class="col-sm-2 control-label">Seed URLs</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="startURL" id="startURL" placeholder="http://example1.com,http://example2.com">
+                            </div>
+							
+                        </div>
+						
+                        
+                        
+                        
+                        <!-- CSRF - Yoyo! -->
+                        {% csrf_token %}
+                                
+                        <!-- Set Allowed Protocols -->
+                        <div class="form-group">
+                            <label for="allowedProtocols" class="col-sm-2 control-label">Allowed Protocols</label>
+                            <div class="col-sm-5">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="allowedProtocols[]" id="allowedProtocols" value="http" {% if 'http' in settings.allowed_protocols %}checked="checked"{% endif %}> HTTP
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="allowedProtocols[]" id="allowedProtocols" value="https" {% if 'https' in settings.allowed_protocols %}checked="checked"{% endif %}> HTTPS
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Set Allowed Extensions -->
+                        <div class="form-group">
+                            <label for="allowedExtensions" class="col-sm-2 control-label">Allowed Extensions</label>
+                            <div class="col-sm-5">
+                                <textarea id="allowedExtensions" name="allowedExtensions" class="form-control" rows="3" spellcheck="false" onclick="close_all();">{{ settings.allowed_extensions }}</textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Consider only these input types -->
+                        <div class="form-group">
+                            <label for="toConsider" class="col-sm-2 control-label">Consider Only</label>
+                            <div class="col-sm-5">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="textareas" {% if 'textareas' in settings.consider_only %}checked="checked"{% endif %}> Textareas
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="checkboxes" {% if 'checkboxes' in settings.consider_only %}checked="checked"{% endif %}> Checkboxes and Radios
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="selects" {% if 'selects' in settings.consider_only %}checked="checked"{% endif %}> Selects
+                                </label>
+                                
+                                <!-- its looking awkward!. So, new line! -->
+                                
+                                
+                                <!--<label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="cookies" {% if 'cookies' in settings.consider_only %}checked="checked"{% endif %}> Cookies
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="sessions" {% if 'sessions' in settings.consider_only %}checked="checked"{% endif %}> Session Variables
+                                </label>-->
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="toConsider[]" id="toConsider" value="inputs" {% if 'inputs' in settings.consider_only %}checked="checked"{% endif %}> Input Tags
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Exclude input types with names and ids as this -->
+                        <div class="form-group">
+                            <label for="toExclude" class="col-sm-2 control-label">Exclude these fields</label>
+                            <div class="col-sm-5">
+                                <textarea id="toExclude" name="toExclude" class="form-control" rows="2" spellcheck="false" onclick="close_all();">{{ settings.exclude }}</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Include Auth Information -->
+                            <label for="toExclude"><font color="">Authentication Information of web application to be scanned</font></label><br><br>
+                            <div class="form-group">
+                                <label for="loginURL" class="col-sm-2 control-label">Login URL</label>
+                                <div class="col-sm-5">
+                                        <input type="text" name="loginURL" id="loginURL" placeholder="http://example.com/login" class="form-control"></input>
+		                </div>
+                                <br><br>
+                                <label for="logoutURL" class="col-sm-2 control-label">Logout URL</label>
+				<div class="col-sm-5">
+                                        <input type="text" name="logoutURL" id="logoutURL" placeholder="http://example.com/logout" class="form-control"></input>
+				</div>
+                                <br><br>
+			    </div>
+                            <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Field name for Username</label>
+				<div class="col-sm-5">
+                                        <input id="toAuthUsernameField" name="toAuthUsernameField" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Text_box_user"></input>                        
+                                </div>
+			    </div>
+			    <div class="form-group">
+				<label for="toExclude" class="col-sm-2 control-label">Username</label>
+				<div class="col-sm-5">
+                                        <input id="toAuthUsername" name="toAuthUsername" class="form-control" width="20" rows="1" spellcheck="false" value="admin" onclick="close_all();"></input>                        
+                                </div>
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Field name for Password</label>
+                                <div class="col-sm-5">
+					<input id="toAuthPasswordField" name="toAuthPasswordField" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Text_box_password"></input>
+                                </div>								
+			    </div>
+							  
+			    <div class="form-group">	
+				<label for="toExclude" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-5">
+				        <input id="toAuthPassword" name="toAuthPassword" class="form-control" width="20" rows="1" spellcheck="false" value="mypassword" onclick="close_all();"></input>
+                                </div>
+			    </div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">Additional Parameters</label>
+                                <div class="col-sm-5">
+				        <input id="authParameters" name="authParameters" class="form-control" width="20" rows="1" spellcheck="false" placeholder="field1:value1,field2:value2"></input>
+                                </div>	
+			    </div>
+				<div class="form-group" id="redis_box" >
+								 <label for="queueName" class="col-sm-2 control-label">Your Host name </label>
+								<div  class="col-sm-5">
+								
+								<input id="redisIP" name="redisIP" class="form-control" width="20" rows="1" spellcheck="false" placeholder="localhost" value="localhost"></input>
+								</div>
+								
+						</div>
+			    <div class="form-group">
+                                <label for="toExclude" class="col-sm-2 control-label">CSRF token</label>
+                                <div class="col-sm-5">
+				        <input id="toAuthMode" name="toAuthMode" class="form-control" width="20" rows="1" spellcheck="false" value={{ settings.auth_mode }}></input>
+                                </div>
+			    </div> 
+				
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" value="remember"/> Remember these settings
+                                    </label>
+									<br>
+									
+									<label>
+                                        <input type="checkbox" name="parllel" id="parllel" value="parllel" onclick="open_parllel();"/> Are you running this scan as a parallel scan ?
+                                    </label>
+                                </div>
+							</div>
+						</div>
+						<div class="form-group" id="parllel_box" style="display:none">
+								 <label for="queueName" class="col-sm-2 control-label">Queue Name</label>
+								<div  class="col-sm-5">
+								
+								<input id="queueName" name="queueName" class="form-control" width="20" rows="1" spellcheck="false" placeholder="Queue1"></input>
+								</div>
+								
+						</div>
+                            
+                       
+                        
+                        <!-- A neat blue button! -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-play-circle"></span> Start Crawling</button>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Checkbox to remember the settings -->
+                        
+                        
+                    </form>
+                
+                </div>
+            </div>
+                    <div id="blind_content" style="display:none;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:gray">
+					<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                    <!-- Heading! -->
+                    <h1 class="page-header">Start a New Blind XPath Injection Scan</h1>
+
+                               <div class="col-sm-5" id="floating_ip" style="display:none;position:absolute;top:14%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Public IP example</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+							    <br><ul>
+								<li>Specify the ip address of the web application to be tested</li><br>
+								<li>If your app/wesbite is running on local machine ,you can specify the IP address as :localhost</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					          </div>
+							   <div class="col-sm-5" id="floating_url" style="display:none;position:absolute;top:14%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>URLexample</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+							    <br><ul>
+								<li>Specify the complete URL of the page which contains vulnerable parameter for Xpath injection. <br></li>
+								<br><li>For example : http:localhost:9254/sample/index.jsp <br>Assuming that the index page has got a vulnerable text field that could be exploited by Xpath injection attack</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					          </div>
+							  <div class="col-sm-5" id="floating_method" style="display:none;position:absolute;top:14%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>URL Example</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+							    <br><ul>
+								<li>Specify the method of the form at the web page that contains the text-field that is vulnerable to X-path injection . <br></li>
+								<br><li>For example : index.jsp is the web page that has a text field  which would be vulnerable to Xpath injection and has a Html form whose action method might be Get or POST,then a user needs to specify the exact action method of that Html form.<br></li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					          </div>
+							  <div class="col-sm-5" id="floating_parameter" style="display:none;position:absolute;top:14%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Vulnerable Parameter</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+							    <br><ul>
+								<li>Specify the name/id of the text field / parameter at the above given URL  which would be  vulnerable to X-path injection. <br></li>
+								<br><li>For example : index.jsp is the web page that has a text field with id/name as "product_search" which would be vulnerable to Xpath injection,then a user needs to specify "product_search" as input here</li>
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					          </div>
+							  <div class="col-sm-5" id="floating_parameter_value" style="display:none;position:absolute;top:14%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Vulnerable Parameter value</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+							    <br><ul>
+								<li>Specify the value that the vulnerable parameter would be expected to take in order to produce a valid match String .</li><br>
+								
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					          </div>
+							  <div class="col-sm-5" id="floating_match_string" style="display:none;position:absolute;top:14%;left:60%;width:38%;padding-right:0px;padding-left:0px;border-width:1px;background-color:#f5f5f5">
+							    <div class="col-sm-5" style="background-color:black;width:100%;height:30px"><font color="white" size="3px"><b>Match String</b></font></div>
+							    <div style="width:90%;max-width:90%"><br><font color="#428bca" style="font-family: Open Sans,Helvetica Neue,Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;">
+							    <br><ul>
+								<li>Specify the match String which the web application under test is expected to produce once data is posted on the specified url with all the above given input fields and values.<br></li>
+								<br><li>For example : 1 result found </li>
+								
+								
+								</ul>
+							    
+							   </font>
+							   <br>
+							   </div>
+					          </div>
+                    <form class="form-horizontal" role="form" method="POST" action="/blind">
+                    <!-- CSRF - Yoyo! -->
+                    {% csrf_token %}
+                        <div class="form-group">
+                            <label for="projectName" class="col-sm-2 control-label">Project Name</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="projectName" id="projectName" placeholder="Blind Scan 1">
+                            </div>
+                        </div>
+
+
+                        <label for="toExclude"><font color="">Blind XPath Injection Scan Inputs</font></label><br><br>
+
+                        <div class="form-group">
+                            <label for="publicIP" class="col-sm-2 control-label">Public IP</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="publicIP" id="publicIP" placeholder="localhost">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="blindURL" class="col-sm-2 control-label">URL</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="blindURL" id="blindURL" placeholder="http://localhost/asaanxpath/admin/index.php">
+                            </div>
+							
+                        </div>						
+                       
+                        <div class="form-group">
+                            <label for="method" class="col-sm-2 control-label">Method GET/POST</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="method" id="method" placeholder="GET">
+                            </div>
+							
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="paramName" class="col-sm-2 control-label">Vulnerable parameter</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="paramName" id="paramName" placeholder="product_search">
+                            </div>
+							
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="paramValue" class="col-sm-2 control-label">Valid value of parameter</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="paramValue" id="paramValue" placeholder="Boss">
+                            </div>
+							
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="matchString" class="col-sm-2 control-label">Match String in Success response</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="matchString" id="matchString" placeholder="1 result found">
+                            </div>
+							
+                        </div>
+                                               
+                        <!-- A neat blue button! -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-play-circle"></span> Start Scanning</button>
+                            </div>
+                        </div>                                                                      
+                        
+                    </form>
+                
+                </div>
+            </div>
+       
+		
+                
+                
+            
+{% endblock %}

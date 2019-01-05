@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %} Blind XPath Injection Details {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                    <!-- Heading! -->
+                    <h1 class="page-header">Blind XPath Injection Details</h1>
+
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Scan Details
+                                </h3>
+                            </div>
+                          
+                            <div class="panel-body">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Project Name</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.project_name }}</p>
+                                        </div>
+                                    </div>
+                                  
+
+                                    {% if project.project_status == 'Completed' %}
+<input type="hidden" id="status" value="completed"></input>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">View Report</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static"><a class="btn btn-primary btn-xs" href="/blind_report?projectName={{ project.project_name }}">View Report</a></p>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Public IP</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.public_IP }}</p>
+                                        </div>
+                                    </div>
+                                    
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Method</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.method }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">URL</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.blind_URL }}</p>
+                                        </div>
+                                    </div>
+                                                                       
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Parameter Name</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.param_name }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Parameter Value</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.param_value }}</p>
+                                        </div>
+                                    </div>                                    
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Match String</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.match_string }}</p>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Project Status</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">{{ project.project_status }}</p>
+                                        </div>
+                                    </div>
+  {% if project.project_status != 'Completed' %}
+<input type="hidden" id="status" value="naa"></input>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label"></label>
+                                        <div class="col-sm-10">
+                                       <img src ="static/load.gif" style="position:relative ;left:450px;"/>
+                                            <br />
+                                            <p class="form-control-static"> <font color="gray" size="6px" style="position:absolute  ;left:190px"><b>Scan in Progress. Please Wait for Report...</font></p>
+                                        </div>
+                                 <br><br>
+<br>
+<br>
+                                    </div>
+
+                                    
+
+                                    {% endif %}
+
+                                </form>
+                            </div>
+                        </div>
+
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block scripts_blind %}
+        <script>
+        function update_details_blind() {
+       // alert("a");
+       if(document.getElementById("status").value=="completed")
+           {
+            alert("Completed");
+               return;
+           }
+else
+     {
+        location.reload();
+     
+     
+    }
+
+         }
+if(document.getElementById("status").value !="completed")
+{
+setTimeout(update_details_blind, 8000);
+}
+       
+            /*function update_details_blind() {
+                 //alert("qq");
+                $.get("/blind_details?projectName={{ project.project_name }}&page='Blind Xpath injection details'&processID={{ processID }}",
+                    function(data){
+                       //alert(data);
+                       //alert({{project.project_status }});
+                     //data="hello madaaam "+ data;
+                        //$('#dashboard_area').html(data);
+                             // alert("aa");
+                    }
+                );
+                //if ({{project.project_status}} != 'Completed')
+                    setTimeout(update_details_blind, 1200);
+            }
+			
+            
+            //if ({{project.project_status }} != 'Completed')
+                update_details_blind();
+           **/
+        </script>
+{% endblock %}

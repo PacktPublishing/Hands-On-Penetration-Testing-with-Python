@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %} Start Blind Xpath Injection Scan {% endblock %}
+
+{% block css_links %}<link href="/static/css/dashboard.css" type="text/css" rel=stylesheet>
+{% endblock %}
+
+{% block body_content %}<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="dashboard_area">
+
+                    <!-- Heading! -->
+                    <h1 class="page-header">Start a New Blind XPath Injection Scan</h1>
+
+
+                    <form class="form-horizontal" role="form" method="POST" action="" onSubmit="return check();">
+                    <!-- CSRF - Yoyo! -->
+                    {% csrf_token %}
+                        <div class="form-group">
+                            <label for="projectName" class="col-sm-2 control-label">Project Name</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="projectName" id="projectName" placeholder="Blind Scan 1">
+                            </div>
+                        </div>
+
+
+                        <label for="toExclude"><font color="">Blind XPath Injection Scan Inputs</font></label><br><br>
+
+                        <div class="form-group">
+                            <label for="publicIP" class="col-sm-2 control-label">Public IP</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="publicIP" id="publicIP" placeholder="localhost">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="blindURL" class="col-sm-2 control-label">URL</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="blindURL" id="blindURL" placeholder="http://localhost/asaanxpath/admin/index.php">
+                            </div>
+							
+                        </div>						
+                       
+                        <div class="form-group">
+                            <label for="method" class="col-sm-2 control-label">Method GET/POST</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="method" id="method" placeholder="GET">
+                            </div>
+							
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="paramName" class="col-sm-2 control-label">Vulnerable parameter</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="paramName" id="paramName" placeholder="product_search">
+                            </div>
+							
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="paramValue" class="col-sm-2 control-label">Valid value of parameter</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="paramValue" id="paramValue" placeholder="Boss">
+                            </div>
+							
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="matchString" class="col-sm-2 control-label">Match String in Success response</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="matchString" id="matchString" placeholder="1 result found">
+                            </div>
+							
+                        </div>
+                                               
+                        <!-- A neat blue button! -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-play-circle"></span> Start Scanning</button>
+                            </div>
+                        </div>                                                                      
+                        
+                    </form>
+                
+                </div>
+            </div>
+        </div>
+{% endblock %}
