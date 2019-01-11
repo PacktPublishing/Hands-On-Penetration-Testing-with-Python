@@ -1,0 +1,35 @@
+{
+"employees":
+{"department":"IT","location":"Dubai",
+	"data":
+	[
+		{
+		"id":1,
+		"name":"Emp1",
+		"age":33,
+		"salary":30000,
+		"manager_id":33,
+		"slab":"NA",
+		"doj":"06/06/2016"
+		},
+		{
+		"id":2,
+		"name":"Emp2",
+		"age":27,
+		"salary":25000,
+		"manager_id":33,
+		"slab":"NA",
+		"doj":"03/04/2016"
+		},
+		{
+		"id":3,
+		"name":"Emp3",
+		"age":34,
+		"salary":34000,
+		"manager_id":33,
+		"slab":"NA",
+		"doj":"01/09/2015"
+		}
+	]
+}
+}
