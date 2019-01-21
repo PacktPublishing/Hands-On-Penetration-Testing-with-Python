@@ -1,0 +1,55 @@
+(gdb) x $rsp
+0x7fffffffddc0:	0x6562b026
+(gdb) x $rbp
+0x7fffffffdf60:	0xffffdf80
+
+
+(gdb) x $rsp
+0x7fffffffdde0:	0x6562b026
+(gdb) x$ rbp
+Undefined command: "x$".  Try "help".
+(gdb) x $rbp
+0x7fffffffdf80:	0xffffdfa0
+
+
+
+
+Lstest
+Breakpoint 1, 0x00005555555546f5 in vuln ()
+(gdb) x $rsp
+0x7fffffffdde0:	0x6562b026
+(gdb) x $rbp
+0x7fffffffdf80:	0xffffdfa0
+
+IT must be noted that ,to get the location in payload where contents of instruction pointer get overwritten ,or  a jump happens at some register that we can control ,we send a unique set of strings.
+
+a1a2a3a4...
+
+
+lets say the content of register sp=a4 ,it means we must specify teh address of our user controlled buffer after a1a2a3 <our_buff_hex> to make the control go there ,and thats where we have our shell code placed.
+
+THus at time of crash with unique strings ,we need to check contents of sp as : x $rsp => 0x7fffffffdf88:	0x6f41316f
+
+where 0x6f41316f is teh content ,translating to oA1o , which means that the index at which oA1o will be placed by generate.rb scriot will be the place where instruction pointer makes the jump.THus we shall want to place our controlled buffer address at this location.
+
+
+
+(gdb) x $rsp
+0x7fffffffdde0:	0x6562b026
+(gdb) x $rbp
+0x7fffffffdf80:	0xffffdfa0
+
+
+B4 -At aaa breakpoint - break * vuln +43
+(gdb) x $rsp
+0x7fffffffdde0:	0x6562b026
+(gdb) x $rbp
+0x7fffffffdf80:	0xffffdfa0
+
+
+
+
+
+
+
+

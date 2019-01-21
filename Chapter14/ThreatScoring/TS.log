@@ -1,0 +1,10 @@
+2019-01-11 18:46:47,332 - Custom_log - DEBUG - CPU cores to use : 4
+2019-01-11 18:46:55,553 - Custom_log - DEBUG - Processes to be Spawned : 4
+2019-01-11 18:48:03,945 - Custom_log - DEBUG - Started : Limit : 1065228 Offset : 0
+2019-01-11 18:48:41,338 - Custom_log - DEBUG - Started : Limit : 1065228 Offset : 1065228
+2019-01-11 18:48:53,693 - Custom_log - DEBUG - Started : Limit : 1065228 Offset : 2130456
+2019-01-11 18:49:02,283 - Custom_log - DEBUG - Started : Limit : 1065228 Offset : 3195684
+2019-01-11 20:38:28,367 - Custom_log - DEBUG - Process succeded for chunk : 0 -- 1065228
+2019-01-11 20:38:46,296 - Custom_log - DEBUG - Process succeded for chunk : 1065228 -- 1065228
+2019-01-11 20:40:13,012 - Custom_log - DEBUG - Process succeded for chunk : 3195684 -- 1065228
+2019-01-11 20:40:16,026 - Custom_log - DEBUG - Process succeded for chunk : 2130456 -- 1065228
