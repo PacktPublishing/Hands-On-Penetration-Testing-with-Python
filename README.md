@@ -48,18 +48,13 @@ With the following software and hardware list you can run all code files present
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](Graphics Bundle Link).
 
-## Code in Action
-
-Click on the following link to see the Code in Action:
-
-[Placeholder link](www.youtube.com/URL)
 
 ### Related products <Other books you may enjoy>
 * Python For Offensive PenTest [[Packt]](https://www.packtpub.com/networking-and-servers/python-offensive-pentest?utm_source=github&utm_medium=repository&utm_campaign=9781788838979) [[Amazon]](https://www.amazon.com/dp/1788838971)
 
 * Practical Linux Security Cookbook - Second Edition [[Packt]](https://www.packtpub.com/networking-and-servers/practical-linux-security-cookbook-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789138399) [[Amazon]](https://www.amazon.com/dp/1789138396)
 
-## Get to Know the Author(s)
+## Get to Know the Author
 **Author Name** Furqan Khan is a security researcher who loves to innovate in Python, pentesting, ML, AI, and big data ecosystems With a gold medal at both M.Tech and B.Tech, he started off as a research scientist at NITK,
 where he developed a web app scanner for the Ministry of IT (India). He then worked as a security researcher with Paladion Networks and Wipro
 Dubai exploring pentesting/exploitation space where he developed tools such as vulnerability scanner and a threat intelligence platform.
