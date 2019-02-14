@@ -1,6 +1,6 @@
 # Hands-On Penetration Testing with Python
 
-<a href="https://www.packtpub.com/networking-and-servers/hands-penetration-testing-python?utm_source=github&utm_medium=repository&utm_campaign=9781788990820"><img src="Cover Image URL of the Book" alt="https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9781788990820-%20Copy.png" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/networking-and-servers/hands-penetration-testing-python?utm_source=github&utm_medium=repository&utm_campaign=9781788990820"><img src="https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9781788990820-%20Copy.png" alt="Hands-On Penetration Testing with Python" height="256px" align="right"></a>
 
 This is the code repository for [Hands-On Penetration Testing with Python](https://www.packtpub.com/networking-and-servers/hands-penetration-testing-python?utm_source=github&utm_medium=repository&utm_campaign=9781788990820), published by Packt.
 
@@ -55,9 +55,9 @@ Click on the following link to see the Code in Action:
 [Placeholder link](www.youtube.com/URL)
 
 ### Related products <Other books you may enjoy>
-* Linux: Powerful Server Administration [[Packt]](https://www.packtpub.com/networking-and-servers/python-offensive-pentest?utm_source=github&utm_medium=repository&utm_campaign=9781788838979) [[Amazon]](https://www.amazon.com/dp/1788838971)
+* Python For Offensive PenTest [[Packt]](https://www.packtpub.com/networking-and-servers/python-offensive-pentest?utm_source=github&utm_medium=repository&utm_campaign=9781788838979) [[Amazon]](https://www.amazon.com/dp/1788838971)
 
-* Linux Device Drivers Development [[Packt]](https://www.packtpub.com/networking-and-servers/practical-linux-security-cookbook-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789138399) [[Amazon]](https://www.amazon.com/dp/1789138396)
+* Practical Linux Security Cookbook - Second Edition [[Packt]](https://www.packtpub.com/networking-and-servers/practical-linux-security-cookbook-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789138399) [[Amazon]](https://www.amazon.com/dp/1789138396)
 
 ## Get to Know the Author(s)
 **Author Name** Furqan Khan is a security researcher who loves to innovate in Python, pentesting, ML, AI, and big data ecosystems With a gold medal at both M.Tech and B.Tech, he started off as a research scientist at NITK,
