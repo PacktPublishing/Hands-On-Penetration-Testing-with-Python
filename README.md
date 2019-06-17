@@ -4,10 +4,10 @@
 
 This is the code repository for [Hands-On Penetration Testing with Python](https://www.packtpub.com/networking-and-servers/hands-penetration-testing-python?utm_source=github&utm_medium=repository&utm_campaign=9781788990820), published by Packt.
 
+**Enhance your ethical hacking skills to build automated and intelligent systems**
 
 For any queries please reach out to furqankhan08@gmail.com.
 
-**Enhance your ethical hacking skills to build automated and intelligent systems**
 
 ## What is this book about?
 With the current technological and infrastructural shift, penetration testing is no longer a process-oriented activity. Modern-day penetration testing demands lots of automation and innovation; the only language that dominates all its peers is Python. Given the huge number of tools written in Python, and its popularity in the penetration testing space, this language has always been the first choice for penetration testers.
