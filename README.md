@@ -4,6 +4,9 @@
 
 This is the code repository for [Hands-On Penetration Testing with Python](https://www.packtpub.com/networking-and-servers/hands-penetration-testing-python?utm_source=github&utm_medium=repository&utm_campaign=9781788990820), published by Packt.
 
+
+For any queries please reach out to furqankhan08@gmail.com.
+
 **Enhance your ethical hacking skills to build automated and intelligent systems**
 
 ## What is this book about?
